@@ -1,0 +1,8 @@
+<ng-container *ngIf="!project.portfolioId">
+  {{project.name}}{{copyright}}
+</ng-container>
+<a *ngIf="project.portfolioId" [routerLink]="link">
+  {{project.name}}{{copyright}}
+  <i class="fa fa-eye" style="color:#888"></i>
+</a>
+

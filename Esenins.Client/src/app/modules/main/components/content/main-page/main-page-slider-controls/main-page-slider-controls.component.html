@@ -1,0 +1,8 @@
+<div class="wrapper">
+  <div class="slide-indicator"
+       *ngFor="let index of range(slidesCount)"
+       [ngClass]="{ 'active': index === currentSlide }"
+       (click)="indicatorClicked.emit(index)">
+    <div class="white-square"></div>
+  </div>
+</div>

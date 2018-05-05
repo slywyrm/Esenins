@@ -1,0 +1,93 @@
+@import "../../../shared/styles/animations";
+@import "../../../shared/styles/colors";
+
+:host {
+  color: white;
+
+  nav {
+    position: relative;
+    height: 100%;
+    background-color: $dark-gray;
+    overflow: hidden;
+    z-index: 1100;
+
+    #menuToggleOff {
+      position: absolute;
+      top: 5rem;
+      left: 5rem;
+      font-size: 5rem;
+      transform: rotate(45deg);
+      cursor: pointer;
+    }
+
+    ul {
+      width: 100%;
+      height: 100%;
+      margin-top: 10rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      list-style: none;
+      padding-left: 3.5rem;
+      overflow: auto;
+
+      li {
+        margin: 5rem;
+        margin-bottom: 0;
+        width: 22rem;
+
+        .menu-link {
+          width: 100%;
+          //position: relative;
+          text-decoration: none;
+          font-family: OrbitronLight;
+          font-size: 2.5rem;
+          color: #ddd;
+          //border: 2px solid transparent;
+          transition: color $transition-time, border-color $transition-time, opacity $transition-time;
+          display: flex;
+          justify-content: center;
+          outline: none !important;
+          cursor: pointer;
+
+          //@media (max-width: 1900px) {
+          //  border: 1px solid transparent;
+          //}
+
+          //img {
+          //  width: 100%;
+          //  height: auto;
+          //  transition: filter $transition-time;
+          //}
+
+          .item-name {
+            //position: absolute;
+            //top: 50%;
+            //left: 50%;
+            //transform: translate(-50%, -50%);
+            outline: none !important;
+            font-size: 2rem;
+          }
+
+          &:hover, &.active {
+            color: white !important;
+
+            //img {
+            //  filter: brightness(.6);
+            //}
+          }
+
+          &.active {
+            border-color: white;
+          }
+
+          //&::before {
+          //  display: block;
+          //  content:"";
+          //  margin-top: 75%;
+          //}
+        }
+      }
+    }
+  }
+}

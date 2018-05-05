@@ -1,0 +1,132 @@
+@import 'responsive';
+
+$menu-width: 40rem;
+$project-width: 30rem;
+
+@mixin menu-width {
+  //@include media-breakpoint-up(xl) {
+  //  width: 40rem;
+  //}
+
+  @include  media-breakpoint-up(lg) {
+    width: $menu-width;
+  }
+
+  @include  media-breakpoint-down(lg) {
+    width: $menu-width;
+  }
+}
+
+@mixin content-width {
+  //@include media-breakpoint-up(xl) {
+  //  width: calc(100% - 40rem);
+  //}
+
+  @include  media-breakpoint-up(lg) {
+    width: calc(100% - 40rem);
+  }
+
+  @include  media-breakpoint-down(lg) {
+    width: calc(100% - 40rem);
+  }
+}
+
+@mixin menu-toggle-scale {
+  @include media-breakpoint-up(xl) {
+    transform: scale(1);
+  }
+
+  @include media-breakpoint-down(xl) {
+    transform: scale(.8);
+  }
+
+  @include media-breakpoint-down(lg) {
+    transform: scale(.7);
+  }
+
+  @include media-breakpoint-down(md) {
+    transform: scale(.6);
+  }
+
+  @include media-breakpoint-down(sm) {
+    transform: scale(.45);
+  }
+
+  @media (max-width: 768px) {
+    transform: scale(.55);
+  }
+}
+
+@mixin projects-width {
+  @media (min-width: 2120px) {
+    width: 120rem;
+  }
+
+  @media (max-width: 2120px) {
+    width: 90rem;
+  }
+
+  @media (max-width: 1900px) {
+    width: 120rem;
+  }
+
+  @media (max-width: 1000px) {
+    width: 90rem;
+  }
+
+  @media (max-width: 625px) {
+    width: 60rem;
+  }
+}
+
+@mixin projects-height {
+  @include media-breakpoint-up(xl) {
+    max-height: 65%;
+  }
+
+  @include media-breakpoint-down(xl) {
+    max-height: 75%;
+  }
+
+  @media (min-width: 2120px) {
+    height: (120rem * .9) * 9 / 16;
+  }
+
+  @media (max-width: 2120px) {
+    height: (90rem * .9) * 9 / 16;
+  }
+
+  @media (max-width: 1900px) {
+    height: (120rem * .9) * 9 / 16;
+  }
+
+  @media (max-width: 1000px) {
+    height: (90rem * .9) * 9 / 16;
+  }
+
+  @media (max-width: 625px) {
+    height: (60rem * .9) * 9 / 16;
+  }
+}
+
+@mixin project-width($width: $project-width) {
+  @include  media-breakpoint-up(lg) {
+    width: $width;
+  }
+
+  @include  media-breakpoint-down(lg) {
+    //width: $width / 1.5;
+    width: $width;
+  }
+}
+
+@mixin project-height($height) {
+  @include  media-breakpoint-up(lg) {
+    height: $height;
+  }
+
+  @include  media-breakpoint-down(lg) {
+    //height: $height / 1.5;
+    height: $height;
+  }
+}

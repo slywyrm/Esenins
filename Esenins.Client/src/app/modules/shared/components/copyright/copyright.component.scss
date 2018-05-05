@@ -1,0 +1,25 @@
+.copyright {
+  &-logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 3.5em;
+    opacity: .8;
+    transform: translateY(-110%);
+
+    img {
+      height: 100%;
+    }
+  }
+
+  &-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20em;
+    font-size: 1em;
+    font-family: HelveticaRegular;
+    color: white;
+    opacity: .7;
+  }
+}

@@ -1,0 +1,11 @@
+<div class="copyright-text"
+     *ngIf="copyright?.name"
+     [style.fontSize]="fontSize"
+     [style.width]="textWidth">
+  Проект выполнен во время работы в команде студии {{copyright.name}}
+</div>
+<div class="copyright-logo"
+     *ngIf="copyright?.logo"
+     [style.height]="logoHeight">
+  <img [src]="copyright.logo">
+</div>

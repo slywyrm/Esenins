@@ -1,0 +1,30 @@
+$arrow-margin: 8rem;
+
+:host {
+  width: 100%;
+  height: 100%;
+}
+
+.wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  color: white;
+
+  .arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 3rem;
+    z-index: 1000;
+    cursor: pointer;
+
+    &-left {
+      left: $arrow-margin;
+    }
+
+    &-right {
+      right: $arrow-margin;
+    }
+  }
+}

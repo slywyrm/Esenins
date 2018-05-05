@@ -1,0 +1,11 @@
+<nav>
+  <ul>
+    <li *ngFor="let key of sectionKeys">
+      <div class="menu-link" [routerLink]="['/main', key]" routerLinkActive="active" [style.opacity]="(mainService.menuShown$ | async) ? 1 : 0">
+        <!--<img [src]="mainService.sections[key].menuImgSrc" alt="">-->
+        <div class="item-name">{{mainService.sections[key].russianName}}</div>
+      </div>
+    </li>
+  </ul>
+</nav>
+

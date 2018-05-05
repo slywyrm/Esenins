@@ -1,0 +1,29 @@
+@import 'modules/shared/styles/colors';
+
+@keyframes rotate-device {
+  0% {transform: rotate(0);}
+  50% {transform: rotate(0);}
+  100% {transform: rotate(-90deg)}
+}
+
+.portrait-disable {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  background-color: $dark-gray;
+  z-index: 1200;
+
+  @media only screen and (orientation: portrait) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  img {
+    max-width: 500px;
+    animation: rotate-device 1s ease-in-out 2s infinite alternate;
+  }
+}

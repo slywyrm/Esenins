@@ -1,0 +1,16 @@
+:host {
+  display: flex;
+  justify-content: flex-start;
+  font-size: 1.2rem;
+  text-transform: none;
+
+  a {
+    color: black;
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: none;
+      color: #888;
+    }
+  }
+}

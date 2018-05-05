@@ -1,0 +1,76 @@
+@import '../../../../../shared/styles/animations';
+@import '../../../../../shared/styles/sizes';
+
+$tile-width: $project-width;
+$tile-padding: 1rem;
+
+.tile {
+  position: relative;
+  @include project-width;
+  @include project-height($tile-width * 10 / 16);
+  color: white;
+  cursor: pointer;
+
+  @mixin tile-positioning {
+    position: absolute;
+    top: $tile-padding;
+    left: $tile-padding;
+    right: $tile-padding;
+    bottom: $tile-padding;
+  }
+
+  &__background {
+    @include tile-positioning;
+    background-position: center;
+    background-size: cover;
+
+    wl-copyright {
+      position: absolute;
+      bottom: 3rem;
+      left: 3rem;
+      z-index: 900;
+    }
+  }
+
+  &-content {
+    @include tile-positioning;
+    font-family: OrbitronLight;
+    background-color: rgba(0, 0, 0, .4);
+    padding: 1.5rem 3rem;
+    opacity: 0;
+    transition: opacity $transition-time;
+
+    &__name {
+      font-size: 1.5rem;
+      line-height: 2rem;
+    }
+
+    &__sub-name {
+      font-size: 1rem;
+    }
+
+    &__annotation {
+      margin-top: 1rem;
+      font-size: 1rem;
+    }
+  }
+
+  &:hover {
+    .tile-content {
+      opacity: 1;
+    }
+  }
+
+  &.long {
+    @include project-width($project-width * 2);
+  }
+
+  &.tall {
+    @include project-height($tile-width * 10 / 8);
+  }
+
+  &.big {
+    @include project-width($project-width * 2);
+    @include project-height($tile-width * 10 / 8);
+  }
+}

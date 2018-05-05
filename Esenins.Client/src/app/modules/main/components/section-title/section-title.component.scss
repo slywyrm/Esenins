@@ -1,0 +1,41 @@
+@import '../../../shared/styles/responsive';
+@import '../../../shared/styles/animations';
+
+@mixin title-left {
+  @include media-breakpoint-up(xl) {
+    left: 3.95rem;
+  }
+
+  @include media-breakpoint-down(xl) {
+    left: 4.7rem;
+  }
+
+  @include media-breakpoint-down(lg) {
+    left: 4.3rem;
+  }
+
+  @include media-breakpoint-down(md) {
+    left: 4.5rem;
+  }
+
+  @include media-breakpoint-down(sm) {
+    left: 4.85rem;
+  }
+
+  @media (max-width: 768px) {
+    left: 5.3rem;
+  }
+}
+
+.title {
+  position: fixed;
+  top: 10rem;
+  @include title-left;
+  z-index: 1100;
+  font-family: OrbitronLight;
+  font-size: 2.5rem;
+  transform: rotate(-90deg) translateX(-100%);
+  transform-origin: left top;
+  user-select: none;
+  transition: color $transition-time / 2;
+}

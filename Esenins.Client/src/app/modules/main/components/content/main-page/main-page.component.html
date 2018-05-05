@@ -1,0 +1,12 @@
+<div class="wrapper" id="test">
+  <div class="arrow arrow-left" (click)="manualSlide(currentSlideIndex - 1)"><i class="fa fa-angle-left"></i></div>
+  <div class="arrow arrow-right" (click)="manualSlide(currentSlideIndex + 1)"><i class="fa fa-angle-right"></i></div>
+  <wl-main-page-slider-controls [slidesCount]="slides.length"
+                                [currentSlide]="currentSlideIndex"
+                                (indicatorClicked)="manualSlide($event)"></wl-main-page-slider-controls>
+
+  <wl-main-page-slide *ngFor="let slide of slides; let i = index"
+                      [slide]="slide"
+                      [active]="currentSlideIndex === i"></wl-main-page-slide>
+</div>
+

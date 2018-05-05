@@ -1,0 +1,39 @@
+@import '../../../../shared/styles/animations';
+@import '../../../../shared/styles/sizes';
+
+$projects-margin: 10rem;
+
+:host {
+  width: 100%;
+
+  .portfolio {
+    padding-top: $projects-margin;
+    padding-bottom: $projects-margin * 2;
+    transition: padding-left $transition-time;
+    overflow: hidden;
+
+    .portfolio-grid {
+      @include projects-width;
+      margin: 0 auto;
+
+     .sizer {
+       @include project-width;
+       @include project-height($project-width * 10 / 16);
+      }
+
+      &:after {
+        content: '';
+        display: block;
+        clear: both;
+      }
+    }
+
+    &.menu-shown {
+      padding-left: $menu-width;
+
+      .portfolio-grid {
+        width: 80rem;
+      }
+    }
+  }
+}
