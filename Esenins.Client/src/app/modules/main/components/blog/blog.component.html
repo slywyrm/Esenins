@@ -1,2 +1,3 @@
-<script src="https://apps.elfsight.com/p/platform.js" defer></script>
-<div class="elfsight-app-46180121-f2df-41be-b4ba-c54120d70ab8"></div>
+<div class="posts">
+  <es-blog-post *ngFor="let post of posts$ | async" [post]="post"></es-blog-post>
+</div>

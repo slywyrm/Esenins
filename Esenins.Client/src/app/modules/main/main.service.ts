@@ -24,12 +24,12 @@ export class MainService {
       menuImgSrc: '/assets/pages/menu-item1.jpg',
       needsHeight: true
     },
-    // blog: {
-    //   name: 'blog',
-    //   russianName: 'блог',
-    //   textColor: 'black',
-    //   menuImgSrc: '/assets/pages/menu-item1.jpg'
-    // },
+    blog: {
+      name: 'blog',
+      russianName: 'блог',
+      textColor: 'black',
+      menuImgSrc: '/assets/pages/menu-item1.jpg'
+    },
     portfolio: {
       name: 'portfolio',
       russianName: 'портфолио',
