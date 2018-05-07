@@ -1,7 +1,7 @@
 import { ChangeDetectorRef, Directive, ElementRef, HostBinding, Input, Renderer2 } from '@angular/core';
 
 @Directive({
-  selector: '[wlFade]'
+  selector: '[esFade]'
 })
 export class FadeDirective {
   // @HostBinding('style.opacity') private opacity: string;
@@ -12,7 +12,7 @@ export class FadeDirective {
     return this.elementRef.nativeElement;
   }
 
-  @Input() set wlFade(value: boolean) {
+  @Input() set esFade(value: boolean) {
     if (value) {
       this.renderer.setStyle(this.element, 'opacity', 0);
       setTimeout(() => this.fade(value), this.transitionTime);

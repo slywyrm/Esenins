@@ -1,0 +1,10 @@
+<div class="tile" [ngClass]="class">
+  <div class="tile__background" [style.backgroundImage]="placeholderPhoto">
+    <es-copyright [copyright]="project.copyright" [scale]=".5"></es-copyright>
+  </div>
+  <div class="tile-content">
+    <div class="tile-content__name">{{project.name}}</div>
+    <div class="tile-content__sub-name">{{project.subName}}</div>
+    <div class="tile-content__annotation">{{project.annotation}}</div>
+  </div>
+</div>

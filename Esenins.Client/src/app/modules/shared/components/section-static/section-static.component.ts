@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnDestroy
 import { Observable, Subscription } from 'rxjs';
 
 @Component({
-  selector: 'wl-section-static',
+  selector: 'es-section-static',
   templateUrl: './section-static.component.html',
   styleUrls: ['./section-static.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush

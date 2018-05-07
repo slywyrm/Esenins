@@ -2,15 +2,15 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule, Route } from '@angular/router';
 
 import { MainComponent } from '../main.component';
-import { ContentComponent } from '../components/content/content.component';
 import { PortfolioItemResolver } from './portfolio-item.resolver';
-import { PortfolioItemComponent } from '../components/content/portfolio/portfolio-item/portfolio-item.component';
+import { PortfolioItemComponent } from '../components/portfolio/portfolio-item/portfolio-item.component';
 import { PortfolioItemCanDeactivateGuard } from './portfolio-item-can-deactivate.guard';
-import { MainPageComponent } from '../components/content/main-page/main-page.component';
-import { PortfolioComponent } from '../components/content/portfolio/portfolio.component';
-import { ProjectsComponent } from '../components/content/projects/projects.component';
-import { ContactsComponent } from '../components/content/contacts/contacts.component';
+import { MainPageComponent } from '../components/main-page/main-page.component';
+import { PortfolioComponent } from '../components/portfolio/portfolio.component';
+import { ProjectsComponent } from '../components/projects/projects.component';
+import { ContactsComponent } from '../components/contacts/contacts.component';
 import { SectionResolver } from './section.resolver';
+import { BlogComponent } from '../components/blog/blog.component';
 
 const portfolioItemRoute: Route = {
   path: ':projectId',
@@ -21,56 +21,42 @@ const portfolioItemRoute: Route = {
   canDeactivate: [PortfolioItemCanDeactivateGuard]
 };
 
-const defaultRoute: Route = { path: '', redirectTo: 'mainPage', pathMatch: 'full' };
-
-const desktopRoutes: Routes = [
-  {
-    path: ':sectionId',
-    component: ContentComponent,
-    children: [portfolioItemRoute]
-  },
-  defaultRoute
-];
-
-const mobileRoutes: Routes = [
-  {
-    path: 'mainPage',
-    component: MainPageComponent,
-    resolve: {
-      section: SectionResolver
-    }
-  },
-  {
-    path: 'portfolio',
-    component: PortfolioComponent,
-    children: [portfolioItemRoute],
-    resolve: {
-      section: SectionResolver
-    },
-  },
-  {
-    path: 'projects',
-    component: ProjectsComponent,
-    children: [portfolioItemRoute],
-    resolve: {
-      section: SectionResolver
-    }
-  },
-  {
-    path: 'contacts',
-    component: ContactsComponent,
-    resolve: {
-      section: SectionResolver
-    }
-  },
-  defaultRoute
-];
+const sectionResolver = { section: SectionResolver };
 
 const routes: Routes = [
   {
     path: '',
     component: MainComponent,
-    children: mobileRoutes // isMobile ? mobileRoutes : desktopRoutes
+    children: [
+      {
+        path: 'mainPage',
+        component: MainPageComponent,
+        resolve: sectionResolver
+      },
+      {
+        path: 'portfolio',
+        component: PortfolioComponent,
+        children: [portfolioItemRoute],
+        resolve: sectionResolver,
+      },
+      {
+        path: 'blog',
+        component: BlogComponent,
+        resolve: sectionResolver
+      },
+      {
+        path: 'projects',
+        component: ProjectsComponent,
+        children: [portfolioItemRoute],
+        resolve: sectionResolver
+      },
+      {
+        path: 'contacts',
+        component: ContactsComponent,
+        resolve: sectionResolver
+      },
+      { path: '', redirectTo: 'mainPage', pathMatch: 'full' }
+    ]
   }
 ];
 

@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Inject, Injectable } from '@angular/core';
 import { Sections } from '../shared/models/sections.model';
 import { Section } from '../shared/models/section.model';
 import * as _ from 'lodash';

@@ -1,7 +1,15 @@
-import { ChangeDetectionStrategy, Component, ElementRef, HostListener, Inject, OnDestroy, OnInit, Renderer2 } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  Component,
+  ElementRef,
+  HostListener,
+  Inject,
+  OnDestroy,
+  OnInit,
+  Renderer2
+} from '@angular/core';
 import { MainService } from './main.service';
-
-import { ContentComponent } from './components/content/content.component';
 import { ActivatedRoute, Router, RouterOutlet } from '@angular/router';
 import { map } from 'rxjs/operators';
 import { DOCUMENT } from '@angular/common';
@@ -9,7 +17,7 @@ import { routeAnimation } from './animations';
 import { combineLatest, Observable, Subscription } from 'rxjs';
 
 @Component({
-  selector: 'wl-main',
+  selector: 'es-main',
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -18,7 +26,6 @@ import { combineLatest, Observable, Subscription } from 'rxjs';
 export class MainComponent implements OnInit, OnDestroy {
   private menuSubscription: Subscription;
   changingSection = false;
-  contentComponent: ContentComponent;
 
   get logoColor$(): Observable<string> {
     return combineLatest(this.mainService.menuShown$, this.mainService.titleInfo$).pipe(
@@ -26,9 +33,9 @@ export class MainComponent implements OnInit, OnDestroy {
     );
   }
 
-  get menuShown$(): Observable<boolean> {
-    return this.mainService.menuShown$;
-  }
+  // get menuShown$(): Observable<boolean> {
+  //   return this.mainService.menuShown$;
+  // }
 
   get isRotated$(): Observable<boolean> {
     return this.mainService.menuShown$;
@@ -36,7 +43,9 @@ export class MainComponent implements OnInit, OnDestroy {
 
   get hideTop$(): Observable<boolean> {
     return this.mainService.selectedSection$.pipe(
-      map(section => section.name === 'portfolio' || section.name === 'projects')
+      map(section => section.name === 'portfolio' ||
+        section.name === 'projects' ||
+        section.name === 'blog')
     );
   }
 
@@ -58,6 +67,7 @@ export class MainComponent implements OnInit, OnDestroy {
               private renderer: Renderer2,
               private router: Router,
               private route: ActivatedRoute,
+              private cdr: ChangeDetectorRef,
               private mainService: MainService,
               @Inject(DOCUMENT) private document: Document) { }
 
@@ -71,16 +81,13 @@ export class MainComponent implements OnInit, OnDestroy {
     });
 
     if (window) {
-      window.onwheel = () => {
+      window.onwheel = (e: WheelEvent) => {
         if (this.changingSection) {
+          e.preventDefault();
           return false;
         }
       };
     }
-  }
-
-  onRouterActivate(contentComponent: ContentComponent) {
-    this.contentComponent = contentComponent;
   }
 
   ngOnDestroy() {
@@ -97,44 +104,30 @@ export class MainComponent implements OnInit, OnDestroy {
     }
   }
 
-  getRouterState(outlet: RouterOutlet) {
+  getRouterState(outlet: RouterOutlet): string {
     return outlet.activatedRoute.snapshot.url[0].path;
   }
 
-  @HostListener('wheel', ['$event']) private onWheel(event: WheelEvent): boolean {
-    const deltaY = event.deltaY;
-    if (this.changingSection) {
-      return false;
-    }
-    const scrollTop = this.document.scrollingElement.scrollTop;
-    if (scrollTop === 0 && deltaY < 0) {
-      this.changeSection(-1);
-      return;
-    }
-    const viewportHeight = Math.max(this.document.documentElement.clientHeight, window && window.innerHeight);
-    const scrollBottom = scrollTop + viewportHeight;
-    if (this.document.documentElement.offsetHeight === scrollBottom && deltaY > 0) {
-      this.changeSection(1);
-    }
-  }
-
-  private onSwipeDown(event) {
-    console.log(event);
+  @HostListener('wheel', ['$event.deltaY']) onWheel(deltaY: number): boolean {
     if (!this.changingSection) {
-      this.changeSection(-1);
+      const scrollTop = this.document.scrollingElement.scrollTop;
+      console.log(scrollTop, deltaY);
+      if (scrollTop <= 0 && deltaY < 0) {
+        this.changeSection(-1);
+        return;
+      }
+      const viewportHeight = Math.max(this.document.documentElement.clientHeight, window && window.innerHeight);
+      const scrollBottom = scrollTop + viewportHeight;
+      console.log(this.document.documentElement.offsetHeight, scrollBottom, deltaY);
+      if (this.document.documentElement.offsetHeight <= scrollBottom && deltaY > 0) {
+        this.changeSection(1);
+      }
     }
   }
 
-  private onSwipeUp(event) {
-    console.log(event);
-    if (!this.changingSection) {
-      this.changeSection(1);
-    }
-  }
-
-  private changeSection(delta: number) {
+  private changeSection(delta: number): void {
     this.changingSection = true;
-    setTimeout(() => this.changingSection = false, 1000);
+    setTimeout(() => { this.changingSection = false; this.cdr.detectChanges(); }, 500);
     this.router.navigate(['/main', this.mainService.findSectionByIndexDelta(delta)]);
   }
 

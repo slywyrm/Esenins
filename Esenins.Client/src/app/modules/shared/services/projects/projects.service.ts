@@ -228,7 +228,7 @@ export class ProjectsService {
         '/assets/portfolio/8/5.jpg',
         '/assets/portfolio/8/6.jpg'
       ],
-      // tileSize: 'long',
+      tileSize: 'tall',
       copyright: {
         name: 'Sundukovy Sisters',
         logo: '/assets/main-page-slides/copyrights/SS_logo.png'
@@ -251,6 +251,22 @@ export class ProjectsService {
         '/assets/portfolio/7/4.jpg'
       ],
       tileSize: 'long'
+    },
+    {
+      id: '10',
+      name: 'Foodtruck "pitApitA"',
+      subName: 'г. Москва, Archpoint concept awards 2017',
+      annotation: 'Безопасная еда на улицах города',
+      description: `Для конкурса Archpoint concept awards 2017 нами была разработана концепция сети заведений общественного питания pitApitA. Лозунг данного заведения: «Безопасная еда - безопасная среда!». Идея оформления родилась в конце новогодних праздников. В преддверии напряженных рабочих будней мы предложили дополнительные меры безопасности. В частности, на улицах города возле станций метро, бизнес центров, вокзалов и мест массового скопления людей начать устанавливать “бетонные блоки” сети заведений уличного питания «pitApitA». Таким образом мы намерены минимизировать голодные обмороки, отравления, нервное напряжение по причине безумного голода. Внешнее оформление представляет собой защитный бетонный блок, которые регулярно появляются на улицах нашего города перед праздниками. Фишкой нашего заведения стала открытая кухня на улицах города! Также нами было разработан концепт приложения для данной сети общественного питания.`,
+      placeholderPhoto: '/assets/portfolio/10/1.jpg',
+      photos: [
+        '/assets/portfolio/10/1.jpg',
+        '/assets/portfolio/10/2.jpg',
+        '/assets/portfolio/10/3.jpg',
+        '/assets/portfolio/10/4.jpg',
+        '/assets/portfolio/10/5.jpg'
+      ],
+      // tileSize: 'big'
     }
   ]);
   private projects = new BehaviorSubject<ProjectSection[]>([
@@ -283,7 +299,7 @@ export class ProjectsService {
         { name: 'Салон «The Beauty Bar» г. Химки', portfolioId: '7' },
         { name: 'Концепт-проект салона-магазина мебельной фабрики Openorion' },
         { name: 'Выстовочный стенд мебельной фабрики Openorion' },
-        { name: 'Foodtruck "pitApitA" г.Москва' }
+        { name: 'Foodtruck "pitApitA" г.Москва', portfolioId: '10' }
       ]
     },
     {

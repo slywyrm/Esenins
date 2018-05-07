@@ -1,7 +1,0 @@
-<div class="portfolio" [ngClass]="{ 'menu-shown': menuShown$ | async }">
-  <div class="portfolio-grid" #shuffle>
-    <wl-portfolio-tile *ngFor="let project of projects" [project]="project"></wl-portfolio-tile>
-    <div class="sizer"></div>
-  </div>
-</div>
-<router-outlet></router-outlet>

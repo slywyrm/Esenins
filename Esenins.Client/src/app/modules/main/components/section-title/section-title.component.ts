@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnInit } 
 import { MainService, TitleInfo } from '../../main.service';
 
 @Component({
-  selector: 'wl-section-title',
+  selector: 'es-section-title',
   templateUrl: './section-title.component.html',
   styleUrls: ['./section-title.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush

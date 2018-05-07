@@ -30,10 +30,9 @@
       padding-left: calc(100% - 40rem);
     }
 
-    & ::ng-deep > * {
-      position: absolute;
-      //opacity: 0; // workaround for safari
-    }
+    //& ::ng-deep > * {
+    //  position: absolute;
+    //}
   }
 
   #menuToggle {
@@ -53,7 +52,7 @@
       @include menu-toggle-scale;
     }
 
-    &:hover {
+    &.on-hover {
       fill: #777 !important;
     }
 

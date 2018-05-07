@@ -2,7 +2,7 @@ import { Component, HostBinding, Input, OnInit } from '@angular/core';
 import { CopyrightModel } from '../../models/copyright.model';
 
 @Component({
-  selector: 'wl-copyright',
+  selector: 'es-copyright',
   templateUrl: './copyright.component.html',
   styleUrls: ['./copyright.component.scss']
 })
