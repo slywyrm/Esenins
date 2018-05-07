@@ -111,14 +111,12 @@ export class MainComponent implements OnInit, OnDestroy {
   @HostListener('wheel', ['$event.deltaY']) onWheel(deltaY: number): boolean {
     if (!this.changingSection) {
       const scrollTop = this.document.scrollingElement.scrollTop;
-      console.log(scrollTop, deltaY);
       if (scrollTop <= 0 && deltaY < 0) {
         this.changeSection(-1);
         return;
       }
       const viewportHeight = Math.max(this.document.documentElement.clientHeight, window && window.innerHeight);
       const scrollBottom = scrollTop + viewportHeight;
-      console.log(this.document.documentElement.offsetHeight, scrollBottom, deltaY);
       if (this.document.documentElement.offsetHeight <= scrollBottom && deltaY > 0) {
         this.changeSection(1);
       }

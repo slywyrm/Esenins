@@ -19,6 +19,7 @@ import { PortfolioItemComponent } from './components/portfolio/portfolio-item/po
 import { BlogComponent } from './components/blog/blog.component';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { ProjectComponent } from './components/projects/project/project.component';
+import { BlogPostComponent } from './components/blog/blog-post/blog-post.component';
 
 @NgModule({
   imports: [
@@ -43,7 +44,8 @@ import { ProjectComponent } from './components/projects/project/project.componen
     PortfolioItemComponent,
     BlogComponent,
     ProjectsComponent,
-    ProjectComponent
+    ProjectComponent,
+    BlogPostComponent
   ],
   providers: [
     MainService
