@@ -10,6 +10,7 @@ import { SharedModule } from '../../../shared/shared.module';
 export class BlogService {
   private accessToken = new AsyncSubject<string>();
   private readonly fbApi = 'https://graph.facebook.com';
+  private postsHtml: string = null;
 
   constructor(private http: HttpClient) {
     this.getToken();
@@ -33,5 +34,13 @@ export class BlogService {
     return this.graphCall((token: string) =>
       this.http.get<{data: {permalink_url: string}[]}>(`${this.fbApi}/2022032894724732/feed?fields=permalink_url&access_token=${token}`)
     ).pipe(map(response => response.data.map(item => item.permalink_url)));
+  }
+
+  getLoadedPostsHtml(): string {
+    return this.postsHtml;
+  }
+
+  saveLoadedPostsHtml(html: string): void {
+    this.postsHtml = html;
   }
 }
