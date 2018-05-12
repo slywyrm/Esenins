@@ -108,26 +108,27 @@ export class MainComponent implements OnInit, OnDestroy {
     return outlet.activatedRoute.snapshot.url[0].path;
   }
 
-  @HostListener('wheel', ['$event.deltaY']) onWheel(deltaY: number): boolean {
+  @HostListener('wheel', ['$event']) onWheel(event: WheelEvent): boolean {
+    const deltaY = event.deltaY;
     if (!this.changingSection) {
       const scrollTop = this.document.scrollingElement.scrollTop;
-      console.log(scrollTop, deltaY);
       if (scrollTop <= 0 && deltaY < 0) {
         this.changeSection(-1);
         return;
       }
       const viewportHeight = Math.max(this.document.documentElement.clientHeight, window && window.innerHeight);
       const scrollBottom = scrollTop + viewportHeight;
-      console.log(this.document.documentElement.offsetHeight, scrollBottom, deltaY);
       if (this.document.documentElement.offsetHeight <= scrollBottom && deltaY > 0) {
         this.changeSection(1);
       }
+      return;
     }
+    return false;
   }
 
   private changeSection(delta: number): void {
     this.changingSection = true;
-    setTimeout(() => { this.changingSection = false; this.cdr.detectChanges(); }, 500);
+    setTimeout(() => { this.changingSection = false; this.cdr.detectChanges(); }, 1250);
     this.router.navigate(['/main', this.mainService.findSectionByIndexDelta(delta)]);
   }
 

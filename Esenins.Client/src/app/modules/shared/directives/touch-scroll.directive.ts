@@ -11,6 +11,7 @@ export class TouchScrollDirective {
 
   @HostListener('touchstart', ['$event']) private onTouchStart(event: TouchEvent) {
     this.startY = event.touches[0].clientY;
+    console.log(event.touches.length);
   }
 
   @HostListener('touchend', ['$event']) private onTouchEnd(event: TouchEvent) {

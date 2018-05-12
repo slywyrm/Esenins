@@ -7,6 +7,11 @@
   width: 100%;
   height: 100%;
 
+  h2 {
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+  }
+
   .sidebar {
     @include menu-width;
     height: 100%;
@@ -17,14 +22,10 @@
 
     .contacts {
       width: 100%;
-      margin-top: 15rem;
+      margin-top: 11rem;
       font-family: OrbitronLight;
-      font-size: 2rem;
-      padding-left: 11.5rem;
-
-      h1 {
-        margin-bottom: 3rem;
-      }
+      font-size: 1.5rem;
+      padding-left: 10rem;
 
       a {
         text-decoration: none;
@@ -39,10 +40,10 @@
 
       .contact {
         margin-bottom: 1rem;
-        font-size: 1.5rem;
+        font-size: 1rem;
 
         .name {
-          font-size: 2rem;
+          font-size: 1.5rem;
         }
 
         &:last-child {
@@ -53,7 +54,7 @@
       .socials {
         display: flex;
         margin-top: 3rem;
-        font-size: 3rem;
+        font-size: 2rem;
       }
     }
   }
@@ -68,13 +69,14 @@
     background-color: $dark-gray;
     font-family: OrbitronLight;
     transition: width $transition-time;
+    //font-size: .562rem;
 
     form {
       width: 50%;
 
       label {
-        font-size: 2rem;
-        margin-bottom: 1rem;
+        font-size: 1.2rem;
+        margin-bottom: .5rem;
       }
 
       input, button {
@@ -84,7 +86,7 @@
       .form-group .form-control, .btn {
         background-color: $dark-gray;
         color: white;
-        border: 2px solid white;
+        border: 1px solid white;
         border-radius: 0;
 
         @media (max-width: 1900px) {
@@ -93,7 +95,7 @@
       }
 
       .btn {
-        font-size: 1.5rem;
+        font-size: 1rem;
       }
     }
   }

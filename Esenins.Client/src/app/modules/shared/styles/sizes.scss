@@ -59,11 +59,11 @@ $project-width: 30rem;
 
 @mixin projects-width {
   @media (min-width: 2120px) {
-    width: 120rem;
+    width: 150rem;
   }
 
   @media (max-width: 2120px) {
-    width: 90rem;
+    width: 100rem;
   }
 
   @media (max-width: 1900px) {
@@ -89,11 +89,11 @@ $project-width: 30rem;
   }
 
   @media (min-width: 2120px) {
-    height: (120rem * .9) * 9 / 16;
+    height: (150rem * .9) * 9 / 16;
   }
 
   @media (max-width: 2120px) {
-    height: (90rem * .9) * 9 / 16;
+    height: (100rem * .9) * 9 / 16;
   }
 
   @media (max-width: 1900px) {
@@ -110,12 +110,13 @@ $project-width: 30rem;
 }
 
 @mixin project-width($width: $project-width) {
-  @include  media-breakpoint-up(lg) {
-    width: $width;
+  width: $width;
+
+  @media (max-width: 2120px) {
+    width: $width * 5 / 6;
   }
 
-  @include  media-breakpoint-down(lg) {
-    //width: $width / 1.5;
+  @media (max-width: 1900px) {
     width: $width;
   }
 }

@@ -10,6 +10,11 @@ export class HoverClassDirective {
   constructor(private element: ElementRef,
               private renderer: Renderer2) { }
 
+  @HostListener('touchstart') private onTouchStart() {
+    this.isTouch = true;
+    this.renderer.removeClass(this.element.nativeElement, this.esHoverClass);
+  }
+
   @HostListener('mouseenter') private onMouseEnter() {
     if (!this.isTouch) {
       this.renderer.addClass(this.element.nativeElement, this.esHoverClass);
@@ -17,7 +22,6 @@ export class HoverClassDirective {
   }
 
   @HostListener('mouseleave') private onMouseLeave() {
-    this.isTouch = true;
     this.renderer.removeClass(this.element.nativeElement, this.esHoverClass);
   }
 }

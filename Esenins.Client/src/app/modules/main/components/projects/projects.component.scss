@@ -1,9 +1,18 @@
+@import '../../../shared/styles/responsive';
+
+:host {
+  width: 100%;
+}
+
 .projects {
   width: 100%;
   padding-top: 11rem;
   padding-left: 10rem;
-  padding-bottom: 30rem;
   font-family: OrbitronLight;
+
+  @include media-breakpoint-down (md) {
+    padding-bottom: 30rem;
+  }
 
   &-section {
     margin-bottom: 2.5rem;

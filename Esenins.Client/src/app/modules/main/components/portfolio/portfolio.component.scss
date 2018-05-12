@@ -29,10 +29,22 @@ $projects-margin: 10rem;
     }
 
     &.menu-shown {
-      padding-left: $menu-width;
+      margin-left: $menu-width;
 
       .portfolio-grid {
-        width: 80rem;
+        width: 90rem;
+
+        @media (min-width: 2120px) {
+          width: 120rem;
+        }
+
+        @media (max-width: 2120px) {
+          width: 75rem;
+        }
+
+        @media (max-width: 1900px) {
+          width: 90rem;
+        }
       }
     }
   }

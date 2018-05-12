@@ -131,7 +131,7 @@ export class ProjectsService {
     {
       id: '5',
       name: 'Квартира на Остоженке',
-      subName: 'г.Москва, 2015',
+      subName: 'г. Москва, 2015',
       annotation: 'Квартира для двоих в современном классическом стиле',
       description: `
         Интерьер был задуман как апартаменты для двоих. Большая гостиная объединила в себе столовую и гостиную зону с большим диваном и современной видеосистемой. Окна гостиной и спальни выходят на площадь Пречистенских Ворот, открывая взору архитектурное богатство нашей столицы.
@@ -297,9 +297,9 @@ export class ProjectsService {
       name: 'другие',
       projects: [
         { name: 'Салон «The Beauty Bar» г. Химки', portfolioId: '7' },
-        { name: 'Концепт-проект салона-магазина мебельной фабрики Openorion' },
-        { name: 'Выстовочный стенд мебельной фабрики Openorion' },
-        { name: 'Foodtruck "pitApitA" г.Москва', portfolioId: '10' }
+        { name: 'Концепт-проект салона-магазина мебельной фабрики Openorion г. Москва' },
+        { name: 'Выстовочный стенд мебельной фабрики Openorion г. Москва' },
+        { name: 'Foodtruck "pitApitA" г. Москва', portfolioId: '10' }
       ]
     },
     {
@@ -307,33 +307,36 @@ export class ProjectsService {
       name: 'рестораны и бары',
       projects: [
         { name: 'Бар «Johny Josper pub» г. Москва', copyright: 'DKStudio' },
-        { name: 'Ресторан «Воронеж» ул. Пречистенка', portfolioId: '8', copyright: 'Sundukovy Sisters' },
-        { name: 'Ресторан «Воронеж» ул. Малая Дмитровка', portfolioId: '9', copyright: 'Sundukovy Sisters' },
+        { name: 'Ресторан «Воронеж» г. Москва, ул. Пречистенка', portfolioId: '8', copyright: 'Sundukovy Sisters' },
+        { name: 'Ресторан «Воронеж» г. Москва, ул. Малая Дмитровка', portfolioId: '9', copyright: 'Sundukovy Sisters' },
         { name: 'Ресторан Гранд Кафе г. Тверь', portfolioId: '4', copyright: 'DKStudio' },
         { name: 'Караоке-бар «Музыкант» г. Тверь', copyright: 'DKStudio' },
         { name: 'Ресторан «Мандарин, Лапша и Утки» г. Москва', copyright: 'Sundukovy Sisters' },
-        { name: 'Ресторан «Salumeria» г.Москва', portfolioId: '1', copyright: 'Sundukovy Sisters' },
-        { name: 'Ресторан «Remiy Kitchen Bakery» г.Москва', portfolioId: '3', copyright: 'Sundukovy Sisters' },
-        { name: 'Ресторан «Queen Project» г.Казань', copyright: 'Sundukovy Sisters' },
-        { name: 'Ресторан в Lotte Plaza г.Москва (концепт-проект)', copyright: 'Sundukovy Sisters' },
-        { name: 'Ресторан «Wright Brothers BAR & RESTAURANT» г.Москва (концепт-проект)' },
-        { name: 'Столовая free-flo г.Москва (концепт-проект)' },
-        { name: 'Ресторан Портленд г.Калининград', portfolioId: '6', copyright: 'DKStudio' }
+        { name: 'Ресторан «Salumeria» г. Москва', portfolioId: '1', copyright: 'Sundukovy Sisters' },
+        { name: 'Ресторан «Remiy Kitchen Bakery» г. Москва', portfolioId: '3', copyright: 'Sundukovy Sisters' },
+        { name: 'Ресторан «Queen Project» г. Казань', copyright: 'Sundukovy Sisters' },
+        { name: 'Ресторан в Lotte Plaza г. Москва (концепт-проект)', copyright: 'Sundukovy Sisters' },
+        { name: 'Ресторан «Wright Brothers BAR & RESTAURANT» г. Москва (концепт-проект)' },
+        { name: 'Столовая free-flo г. Москва (концепт-проект)' },
+        { name: 'Ресторан Портленд г. Калининград', portfolioId: '6', copyright: 'Sundukovy Sisters' },
+        { name: 'Корнер PinzaUno г. Москва, ул. Рождественка FOOD STORE' }
       ]
     },
     {
       id: 'flats',
       name: 'квартиры',
       projects: [
-        { name: 'Квартира 120кв.м. г.Москва, Богословский пер.', copyright: 'Sundukovy Sisters' },
-        { name: 'Квартира г. Москва, Остоженка', portfolioId: '5', copyright: 'DKStudio' },
+        { name: 'Квартира 120 кв.м. г. Москва, Богословский пер.', copyright: 'Sundukovy Sisters' },
+        { name: 'Квартира г. Москва, ул. Остоженка', portfolioId: '5', copyright: 'DKStudio' },
         { name: 'Квартира г. Тверь', copyright: 'DKStudio' },
-        { name: 'Квартира г. Москва, Мосфильмовская', copyright: 'DKStudio' },
+        { name: 'Квартира г. Москва, ул. Мосфильмовская', copyright: 'DKStudio' },
         { name: 'Квартира г. Одинцово', copyright: 'DKStudio' },
         { name: 'Кваритра г. Москва, Университет' },
-        { name: 'Квартира г. Зеленоград район «Зеленый бор»' },
+        { name: 'Квартира г. Зеленоград, район «Зеленый бор»' },
         { name: 'Квартира г. Химки, район Левобережный' },
-        { name: 'Квартира г. Зеленоград' }
+        { name: 'Квартира г. Зеленоград' },
+        { name: 'Квартира 55 кв.м. г. Москва, м. Академическая' },
+        { name: 'Квартира 72 кв.м. г. Москва, м. Войковская' }
       ]
     },
     {
@@ -349,7 +352,10 @@ export class ProjectsService {
   constructor() { }
 
   getPortfolio(): Observable<PortfolioItem[]> {
-    return this.portfolio.asObservable().pipe(take(1));
+    return this.portfolio.asObservable().pipe(
+      take(1),
+      // map(portfolio => _.orderBy(portfolio, item => +item.id, 'desc'))
+    );
   }
 
   getPortfolioItem(id: string): Observable<PortfolioItem> {
