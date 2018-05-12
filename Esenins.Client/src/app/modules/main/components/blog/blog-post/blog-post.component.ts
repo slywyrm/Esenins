@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FacebookPost } from '../../../../shared/models/facebook-post';
 import * as _ from 'lodash';
+import { Component, ElementRef, Input, OnInit, Renderer2, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'es-blog-post',

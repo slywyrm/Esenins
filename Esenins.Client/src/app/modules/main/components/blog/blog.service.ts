@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { AsyncSubject, BehaviorSubject, Observable } from 'rxjs';
-import { first, map, pluck, switchMap, tap } from 'rxjs/operators';
+import { map, pluck, switchMap } from 'rxjs/operators';
 import { SharedModule } from '../../../shared/shared.module';
 import { FacebookPost } from '../../../shared/models/facebook-post';
 
@@ -12,7 +12,6 @@ export class BlogService {
   private accessToken = new AsyncSubject<string>();
   private readonly fbApi = 'https://graph.facebook.com';
   private readonly posts = new BehaviorSubject<FacebookPost[]>(null);
-
   constructor(private http: HttpClient) {
     this.getToken();
   }
