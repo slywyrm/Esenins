@@ -1,6 +1,53 @@
-.elfsight-app-46180121-f2df-41be-b4ba-c54120d70ab8 {
-  padding: 10rem 15rem 30rem;
+@import '../../../shared/styles/animations';
+@import '../../../shared/styles/sizes';
+
+$projects-margin: 10rem;
+
+:host {
   width: 100%;
-  //padding-top: 10rem;
-  //padding-bottom: 30rem;
+
+  .fb-posts {
+    padding-top: $projects-margin;
+    padding-bottom: $projects-margin * 2;
+    transition: padding-left $transition-time;
+    overflow: hidden;
+
+    &-grid {
+      display: flex;
+      flex-wrap: wrap;
+      @include projects-width;
+      margin: 0 auto;
+
+      .sizer {
+        @include project-width;
+        //@include project-height($project-width * 10 / 16);
+      }
+
+      &:after {
+        content: '';
+        display: block;
+        clear: both;
+      }
+    }
+
+    &.menu-shown {
+      margin-left: $menu-width;
+
+      .fb-posts-grid {
+        width: 90rem;
+
+        @media (min-width: 2120px) {
+          width: 120rem;
+        }
+
+        @media (max-width: 2120px) {
+          width: 75rem;
+        }
+
+        @media (max-width: 1900px) {
+          width: 90rem;
+        }
+      }
+    }
+  }
 }

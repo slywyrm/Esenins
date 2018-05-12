@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { AsyncSubject, Observable } from 'rxjs';
-import { map, pluck, switchMap, tap } from 'rxjs/operators';
+import { AsyncSubject, BehaviorSubject, Observable } from 'rxjs';
+import { first, map, pluck, switchMap, tap } from 'rxjs/operators';
 import { SharedModule } from '../../../shared/shared.module';
+import { FacebookPost } from '../../../shared/models/facebook-post';
 
 @Injectable({
   providedIn: SharedModule
@@ -10,7 +11,7 @@ import { SharedModule } from '../../../shared/shared.module';
 export class BlogService {
   private accessToken = new AsyncSubject<string>();
   private readonly fbApi = 'https://graph.facebook.com';
-  private postsHtml: string = null;
+  private readonly posts = new BehaviorSubject<FacebookPost[]>(null);
 
   constructor(private http: HttpClient) {
     this.getToken();
@@ -30,17 +31,13 @@ export class BlogService {
     return this.accessToken.asObservable().pipe(switchMap(call));
   }
 
-  getPosts(): Observable<string[]> {
-    return this.graphCall((token: string) =>
-      this.http.get<{data: {permalink_url: string}[]}>(`${this.fbApi}/2022032894724732/feed?fields=permalink_url&access_token=${token}`)
-    ).pipe(map(response => response.data.map(item => item.permalink_url)));
-  }
-
-  getLoadedPostsHtml(): string {
-    return this.postsHtml;
-  }
-
-  saveLoadedPostsHtml(html: string): void {
-    this.postsHtml = html;
+  getPosts(forceUpdate = false): Observable<FacebookPost[]> {
+    if (this.posts.getValue() === null || forceUpdate) {
+      this.graphCall((token: string) =>
+        this.http.get<{ data: FacebookPost[] }>(`${this.fbApi}/2022032894724732/feed?fields=permalink_url,message,shares,attachments,updated_time&access_token=${token}`)
+      ).pipe(map(response => response.data))
+        .subscribe(data => this.posts.next(data));
+    }
+    return this.posts.asObservable();
   }
 }

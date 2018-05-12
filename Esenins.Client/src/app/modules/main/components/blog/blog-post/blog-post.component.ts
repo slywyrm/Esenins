@@ -1,4 +1,6 @@
-import { Component, ElementRef, Input, OnInit, Renderer2, ViewChild } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { FacebookPost } from '../../../../shared/models/facebook-post';
+import * as _ from 'lodash';
 
 @Component({
   selector: 'es-blog-post',
@@ -6,13 +8,20 @@ import { Component, ElementRef, Input, OnInit, Renderer2, ViewChild } from '@ang
   styleUrls: ['./blog-post.component.scss']
 })
 export class BlogPostComponent implements OnInit {
-  @ViewChild('post') postElement: ElementRef;
-  @Input() post: string;
+  @Input() post: FacebookPost;
 
-  constructor(private renderer: Renderer2) { }
+  get images(): any {
+    if (!this.post.attachments.data && !this.post.attachments.data[0].subattachments.data) {
+      return [];
+    }
+    return _.chain(this.post.attachments.data[0].subattachments.data)
+      .take(4).toArray()
+      .map(item => item.media.image.src);
+  }
+
+  constructor() { }
 
   ngOnInit() {
-    this.renderer.setAttribute(this.postElement.nativeElement, 'data-href', this.post);
   }
 
 }

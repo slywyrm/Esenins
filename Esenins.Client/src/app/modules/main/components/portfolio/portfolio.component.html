@@ -1,6 +1,6 @@
 <div class="portfolio" [ngClass]="{ 'menu-shown': menuShown$ | async }">
   <div class="portfolio-grid" [@tileEnter]="{value: 'tileEnter'}" #shuffle>
-    <es-portfolio-tile *ngFor="let project of projects" [project]="project"></es-portfolio-tile>
+    <es-portfolio-tile *ngFor="let project of projects$ | async" [project]="project"></es-portfolio-tile>
     <div class="sizer"></div>
   </div>
 </div>

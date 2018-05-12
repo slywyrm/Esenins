@@ -1,0 +1,18 @@
+
+@import '../../../../shared/styles/sizes';
+
+$tile-width: $project-width;
+$tile-padding: 1rem;
+
+.fb-post {
+  position: relative;
+  @include project-width;
+  cursor: pointer;
+
+  &-content {
+    margin: .5rem;
+    padding: .5rem;
+    border: 1px solid black;
+    background-color: white;
+  }
+}

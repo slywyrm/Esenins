@@ -1,1 +1,9 @@
-<div class="fb-post" #post></div>
+<div class="fb-post">
+  <div class="fb-post-content">
+    <div class="fb-post-updated">Опубликовано {{post.updated_time | date}}</div>
+    <!--<div class="fb-post-images">-->
+      <!--{{images}}-->
+    <!--</div>-->
+    <div class="fb-post-message" [esBlogMessage]="post.message"></div>
+  </div>
+</div>

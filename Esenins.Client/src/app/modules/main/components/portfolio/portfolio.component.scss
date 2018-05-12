@@ -12,7 +12,7 @@ $projects-margin: 10rem;
     transition: padding-left $transition-time;
     overflow: hidden;
 
-    .portfolio-grid {
+    &-grid {
       @include projects-width;
       margin: 0 auto;
 

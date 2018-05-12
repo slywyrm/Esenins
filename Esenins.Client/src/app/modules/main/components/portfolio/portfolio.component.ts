@@ -26,8 +26,8 @@ import { tileEnter } from './animation';
 export class PortfolioComponent implements OnInit, AfterViewInit {
   private pack: Packery;
   @ViewChild('shuffle') private shuffleElement: ElementRef;
-  projects: PortfolioItem[];
-  @Output() scrollToTop = new EventEmitter();
+  // projects: PortfolioItem[];
+  projects$: Observable<PortfolioItem[]>;
 
   logAnim = console.log;
 
@@ -41,7 +41,8 @@ export class PortfolioComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit() {
-    this.projectsService.getPortfolio().subscribe(projects => this.projects = projects);
+    // this.projectsService.getPortfolio().subscribe(projects => this.projects = projects);
+    this.projects$ = this.projectsService.getPortfolio();
   }
 
   ngAfterViewInit() {
@@ -54,12 +55,9 @@ export class PortfolioComponent implements OnInit, AfterViewInit {
     });
   }
 
-  reMason(menuShown: boolean): void {
+  reMason(): void {
     if (this.pack) {
       setTimeout(() => this.pack.layout());
-    }
-    if (!menuShown) {
-      this.scrollToTop.emit();
     }
   }
 

@@ -1,52 +1,49 @@
-import { AfterViewInit, Component, ElementRef, Inject, OnDestroy, OnInit, Renderer2, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { BlogService } from './blog.service';
 import { Observable } from 'rxjs';
-import { DOCUMENT } from '@angular/common';
+import { FacebookPost } from '../../../shared/models/facebook-post';
+import * as Packery from 'packery';
+import { MainService } from '../../main.service';
+import { tap } from 'rxjs/operators';
 
 @Component({
   selector: 'es-blog',
   templateUrl: './blog.component.html',
   styleUrls: ['./blog.component.scss']
 })
-export class BlogComponent implements OnInit, AfterViewInit, OnDestroy {
-  @ViewChild('posts') postsElementRef: ElementRef;
-  posts$: Observable<string[]>;
+export class BlogComponent implements OnInit, AfterViewInit {
+  @ViewChild('shuffle') shuffleElement: ElementRef;
+  private packery: Packery;
+  posts$: Observable<FacebookPost[]>;
 
-  private get postsElement(): HTMLElement {
-    return this.postsElementRef.nativeElement;
+  get menuShown$(): Observable<boolean> {
+    return this.mainService.menuShown$.pipe(
+      tap(this.repack.bind(this))
+    );
   }
 
   constructor(private blog: BlogService,
-              private renderer: Renderer2,
-              @Inject(DOCUMENT) private document: Document) { }
+              private mainService: MainService) { }
 
   ngOnInit() {
-    const loaded = this.blog.getLoadedPostsHtml();
-    if (loaded) {
-      this.postsElement.innerHTML = loaded;
-    } else {
-      this.posts$ = this.blog.getPosts();
-    }
-  }
-
-  ngOnDestroy() {
-    this.blog.saveLoadedPostsHtml(this.postsElement.innerHTML);
+    this.posts$ = this.blog.getPosts();
   }
 
   ngAfterViewInit() {
-    setTimeout(this.initFb, 1000);
+    setTimeout(() => {
+      this.packery = new Packery(this.shuffleElement.nativeElement, {
+        columnWidth: '.sizer',
+        itemSelector: '.fb-post',
+        stagger: 50,
+        percentPosition: true
+      });
+    }, 800);
   }
 
-  private initFb() {
-    const d = this.document,
-      s = 'script', id = 'facebook-jssdk';
-    const fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) {
-      return;
+  repack(): void {
+    if (this.packery) {
+      setTimeout(() => this.packery.layout());
     }
-    const js = d.createElement(s); js.id = id;
-    js.src = 'https://connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v3.0&appId=236660337080482&autoLogAppEvents=1';
-    fjs.parentNode.insertBefore(js, fjs);
   }
 
 }
