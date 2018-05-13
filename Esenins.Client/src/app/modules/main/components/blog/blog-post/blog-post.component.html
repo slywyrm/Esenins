@@ -1,9 +1,19 @@
 <div class="fb-post">
   <div class="fb-post-content">
-    <div class="fb-post-updated">Опубликовано {{post.updated_time | date}}</div>
+    <div class="fb-post-updated">{{post.updated_time | date:'longDate'}}</div>
     <!--<div class="fb-post-images">-->
-      <!--{{images}}-->
+      <!--<div class="fb-post-image__wrapper"-->
+           <!--*ngFor="let image of images; let i = index"-->
+           <!--[ngClass]="{ 'long': isImageLong(i), 'tall': isImageTall(i) }">-->
+        <!--<a [href]="image.src" target="_blank">-->
+          <!--<div class="fb-post-image" [style.backgroundImage]="image.img"></div>-->
+        <!--</a>-->
+      <!--</div>-->
     <!--</div>-->
-    <div class="fb-post-message" [esBlogMessage]="post.message"></div>
+    <div class="fb-post-image" [style.backgroundImage]="getImgUrl(post.full_picture)"></div>
+    <div class="fb-post-message" [esBlogMessage]="post.message" [ngClass]="{'clamped': messageClamped}" #message></div>
+    <div class="fb-post-message__ellipsis" *ngIf="messageOverflown">
+      <i class="fa fa-ellipsis-h"></i>
+    </div>
   </div>
 </div>

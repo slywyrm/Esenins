@@ -11,7 +11,93 @@ $tile-padding: 1rem;
   &-content {
     margin: .5rem;
     padding: .5rem;
-    border: 1px solid black;
+    border: 1px solid #bbb;
     background-color: white;
   }
+
+  &-updated {
+    font-size: .9rem;
+    color: #777;
+  }
+
+  &-image {
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+
+    &:before {
+      display: block;
+      content: '';
+      width: 100%;
+      padding-top: 100%;
+    }
+  }
+
+  &-message {
+    overflow: hidden;
+    line-height: 1.2rem;
+    max-height: 500rem;
+    text-align: justify;
+    //transition: max-height .5s ease-in-out;
+
+    &.clamped {
+      max-height: calc(24rem - 4px);
+    }
+
+    &__ellipsis {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      font-size: 1.5rem;
+    }
+  }
+
+  &:hover {
+    .fb-post-message {
+      max-height: 100rem;
+    }
+  }
+  //&-images {
+  //  display: flex;
+  //  flex-wrap: wrap;
+  //}
+  //
+  //&-image {
+  //  width: 100%;
+  //  height: 100%;
+  //  background-position: center;
+  //  background-size: cover;
+  //
+  //  &__wrapper {
+  //    width: 50%;
+  //    position: relative;
+  //
+  //    &:before {
+  //      display: block;
+  //      content: '';
+  //      width: 100%;
+  //      padding-top: 100%;
+  //    }
+  //
+  //    $image-margin: .2rem;
+  //
+  //    a {
+  //      position: absolute;
+  //      top: $image-margin;
+  //      left: $image-margin;
+  //      right: $image-margin;
+  //      bottom: $image-margin;
+  //    }
+  //
+  //    &.long {
+  //      &:before {
+  //        padding-top: 50%;
+  //      }
+  //    }
+  //
+  //    &.tall {
+  //      width: 100%;
+  //    }
+  //  }
+  //}
 }

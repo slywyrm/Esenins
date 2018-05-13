@@ -33,7 +33,7 @@ export class BlogService {
   getPosts(forceUpdate = false): Observable<FacebookPost[]> {
     if (this.posts.getValue() === null || forceUpdate) {
       this.graphCall((token: string) =>
-        this.http.get<{ data: FacebookPost[] }>(`${this.fbApi}/2022032894724732/feed?fields=permalink_url,message,shares,attachments,updated_time&access_token=${token}`)
+        this.http.get<{ data: FacebookPost[] }>(`${this.fbApi}/2022032894724732/feed?fields=permalink_url,message,shares,full_picture,link,updated_time&access_token=${token}`)
       ).pipe(map(response => response.data))
         .subscribe(data => this.posts.next(data));
     }

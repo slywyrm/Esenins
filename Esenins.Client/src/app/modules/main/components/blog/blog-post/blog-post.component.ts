@@ -1,28 +1,68 @@
-import { Component, Input, OnInit } from '@angular/core';
+import {
+  AfterViewInit,
+  ChangeDetectorRef,
+  Component,
+  ElementRef,
+  EventEmitter,
+  HostListener,
+  Input,
+  OnInit,
+  Output,
+  ViewChild
+} from '@angular/core';
 import { FacebookPost } from '../../../../shared/models/facebook-post';
-import * as _ from 'lodash';
-import { Component, ElementRef, Input, OnInit, Renderer2, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'es-blog-post',
   templateUrl: './blog-post.component.html',
   styleUrls: ['./blog-post.component.scss']
 })
-export class BlogPostComponent implements OnInit {
+export class BlogPostComponent implements OnInit, AfterViewInit {
   @Input() post: FacebookPost;
+  @Output() mouseover = new EventEmitter();
+  @Output() initiated = new EventEmitter();
+  messageClamped = true;
+  @ViewChild('message') private messageElementRef: ElementRef;
 
-  get images(): any {
-    if (!this.post.attachments.data && !this.post.attachments.data[0].subattachments.data) {
-      return [];
-    }
-    return _.chain(this.post.attachments.data[0].subattachments.data)
-      .take(4).toArray()
-      .map(item => item.media.image.src);
+  private get messageElement(): HTMLElement {
+    return this.messageElementRef.nativeElement;
   }
 
-  constructor() { }
+  get messageOverflown(): boolean {
+    return this.messageElement.scrollHeight > this.messageElement.clientHeight ||
+      this.messageElement.scrollWidth > this.messageElement.clientWidth;
+  }
+
+  constructor(private cdr: ChangeDetectorRef) { }
 
   ngOnInit() {
+  }
+
+  ngAfterViewInit() {
+    this.cdr.detectChanges();
+    this.initiated.emit();
+  }
+
+  getImgUrl(image: string): string {
+    return `url(${image})`;
+  }
+
+  @HostListener('mouseenter') onMouseEnter(): void {
+    this.messageClamped = false;
+    this.cdr.detectChanges();
+    this.mouseover.emit();
+  }
+
+  @HostListener('mouseleave') onMouseLeave(): void {
+    this.messageClamped = true;
+    this.cdr.detectChanges();
+    this.mouseover.emit();
+  }
+
+  @HostListener('click', ['$event.target']) onClick(target: HTMLElement): void {
+    if (!(target instanceof HTMLAnchorElement)) {
+      window.open(this.post.permalink_url, '_blank');
+    }
   }
 
 }
