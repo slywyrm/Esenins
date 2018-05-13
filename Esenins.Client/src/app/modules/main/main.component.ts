@@ -108,8 +108,7 @@ export class MainComponent implements OnInit, OnDestroy {
     return outlet.activatedRoute.snapshot.url[0].path;
   }
 
-  @HostListener('wheel', ['$event']) onWheel(event: WheelEvent): boolean {
-    const deltaY = event.deltaY;
+  @HostListener('wheel', ['$event.deltaY']) onWheel(deltaY: number): boolean {
     if (!this.changingSection) {
       const scrollTop = this.document.scrollingElement.scrollTop;
       if (scrollTop <= 0 && deltaY < 0) {

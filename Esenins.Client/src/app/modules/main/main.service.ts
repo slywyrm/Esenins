@@ -24,12 +24,6 @@ export class MainService {
       menuImgSrc: '/assets/pages/menu-item1.jpg',
       needsHeight: true
     },
-    blog: {
-      name: 'blog',
-      russianName: 'блог',
-      textColor: 'black',
-      menuImgSrc: '/assets/pages/menu-item1.jpg'
-    },
     portfolio: {
       name: 'portfolio',
       russianName: 'портфолио',
@@ -39,6 +33,12 @@ export class MainService {
     projects: {
       name: 'projects',
       russianName: 'проекты',
+      textColor: 'black',
+      menuImgSrc: '/assets/pages/menu-item1.jpg'
+    },
+    blog: {
+      name: 'blog',
+      russianName: 'блог',
       textColor: 'black',
       menuImgSrc: '/assets/pages/menu-item1.jpg'
     },
