@@ -51,14 +51,10 @@ html {
   }
 }
 
-a:link {
+.gray-link {
   color: #777;
-}
 
-a:visited {
-  color: #777;
-}
-
-a:hover {
-  color: #333 !important;
+  &:hover {
+    color: #333;
+  }
 }

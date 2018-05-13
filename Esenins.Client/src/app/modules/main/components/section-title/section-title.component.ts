@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, HostListener, Input, OnInit } from '@angular/core';
 import { MainService, TitleInfo } from '../../main.service';
 
 @Component({
@@ -31,6 +31,10 @@ export class SectionTitleComponent implements OnInit {
 
   titleInfoEquals(titleInfo: TitleInfo) {
     return this.titleInfo.title !== titleInfo.title || this.titleInfo.color !== titleInfo.color;
+  }
+
+  @HostListener('click') private onClick() {
+    this.mainService.toggleMenu();
   }
 
 }

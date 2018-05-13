@@ -15,11 +15,11 @@ export class BlogMessageDirective {
     // }
     let result = value.replace(
       /(?:#)([a-zA-Zа-яА-Я_0-9]+)/g,
-      '<a href="https://www.facebook.com/hashtag/$1?source=feed_text" target="_blank">#$1</a>'
+      '<a href="https://www.facebook.com/hashtag/$1?source=feed_text" class="gray-link" target="_blank">#$1</a>'
     );
     result = result.replace(
       /(?:@)([a-zA-Zа-яА-Я_0-9]+)/g,
-      '<a href="https://www.instagram.com/$1/" target="_blank">@$1</a>'
+      '<a href="https://www.instagram.com/$1/" class="gray-link" target="_blank">@$1</a>'
     );
     this.html = result;
   }
