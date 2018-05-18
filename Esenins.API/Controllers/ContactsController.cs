@@ -1,7 +1,6 @@
 ﻿using System.Net;
 using System.Net.Mail;
 using System.Threading.Tasks;
-using Esenins.API.Data;
 using Esenins.API.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -11,15 +10,13 @@ namespace Esenins.API.Controllers
     public class ContactsController : Controller
     {
         private readonly SmtpClient _smtpClient = new SmtpClient("smtp.yandex.ru");
-        private readonly ITestRepository _testRepository;
-
-        public ContactsController(ITestRepository testRepository)
+        
+        public ContactsController()
         {
             _smtpClient.UseDefaultCredentials = false;
             _smtpClient.Credentials = new NetworkCredential("slywyrm", "baDfe_7700747");
             _smtpClient.EnableSsl = true;
             _smtpClient.Port = 587;
-            _testRepository = testRepository;
         }
 
         [HttpPost("")]
@@ -42,12 +39,6 @@ namespace Esenins.API.Controllers
 
             await _smtpClient.SendMailAsync(message);
             return Ok();
-        }
-
-        [HttpGet("")]
-        private async Task<ActionResult> Tests()
-        {
-            return Json(await _testRepository.GetAllTests());
         }
     }
 }

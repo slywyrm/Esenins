@@ -7,21 +7,28 @@ using Esenins.API.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Options;
 using Swashbuckle.AspNetCore.Swagger;
 
 namespace Esenins.API
 {
     public class Startup
     {
-        public Startup(IConfiguration config)
+        public Startup(IHostingEnvironment env)
         {
-            Configuration = config;
+            var builder = new ConfigurationBuilder();
+
+            if (env.IsDevelopment())
+            {
+                builder.AddUserSecrets<Startup>();
+            }
+
+            Configuration = builder.Build();
         }
         
-        public IConfiguration Configuration { get; set; }
+        public IConfiguration Configuration { get; }
         
         // This method gets called by the runtime. Use this method to add services to the container.
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
@@ -32,13 +39,8 @@ namespace Esenins.API
             services.AddSwaggerGen(
                 options => options.SwaggerDoc("v1", new Info {Title = "Esenins API", Version = "v1"}));
 
-            services.Configure<DBSettings>(options =>
-            {
-                options.ConnectionString = Configuration.GetSection("MongoConnection:ConnectionString").Value;
-                options.Database = Configuration.GetSection("MongoConnection:Database").Value;
-            });
-
-            services.AddTransient<ITestRepository, TestRepository>();
+            services.AddEntityFrameworkNpgsql()
+                .AddDbContext<AppDbContext>(options => options.UseNpgsql(Configuration["ConnectionString"]));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

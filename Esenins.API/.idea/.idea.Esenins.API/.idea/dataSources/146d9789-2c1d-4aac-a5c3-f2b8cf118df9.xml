@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="esenins@localhost">
+  <database-model serializer="dbm" rdbms="POSTGRES" format-version="4.8">
+    <root id="1">
+      <ServerVersion>10.4</ServerVersion>
+    </root>
+    <database id="2" parent="1" name="esenins">
+      <ObjectId>16386</ObjectId>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </database>
+    <database id="3" parent="1" name="postgres">
+      <ObjectId>12558</ObjectId>
+    </database>
+    <database id="4" parent="1" name="slywyrm">
+      <ObjectId>16384</ObjectId>
+    </database>
+    <role id="5" parent="1" name="esenins">
+      <ObjectId>16385</ObjectId>
+      <Inherit>1</Inherit>
+      <CanLogin>1</CanLogin>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="6" parent="1" name="pg_monitor">
+      <ObjectId>3373</ObjectId>
+      <Inherit>1</Inherit>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="7" parent="1" name="pg_read_all_settings">
+      <ObjectId>3374</ObjectId>
+      <Inherit>1</Inherit>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="8" parent="1" name="pg_read_all_stats">
+      <ObjectId>3375</ObjectId>
+      <Inherit>1</Inherit>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="9" parent="1" name="pg_signal_backend">
+      <ObjectId>4200</ObjectId>
+      <Inherit>1</Inherit>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="10" parent="1" name="pg_stat_scan_tables">
+      <ObjectId>3377</ObjectId>
+      <Inherit>1</Inherit>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="11" parent="1" name="slywyrm">
+      <ObjectId>10</ObjectId>
+      <SuperRole>1</SuperRole>
+      <Inherit>1</Inherit>
+      <CreateRole>1</CreateRole>
+      <CreateDb>1</CreateDb>
+      <CanLogin>1</CanLogin>
+      <Replication>1</Replication>
+      <ConnectionLimit>-1</ConnectionLimit>
+      <BypassRls>1</BypassRls>
+    </role>
+    <schema id="12" parent="2" name="public">
+      <ObjectId>2200</ObjectId>
+      <IntrospectionTimestamp>2018-05-18.14:42:45.469</IntrospectionTimestamp>
+      <IntrospectionStateNumber>561</IntrospectionStateNumber>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="13" parent="2" name="pg_catalog">
+      <ObjectId>11</ObjectId>
+    </schema>
+    <schema id="14" parent="2" name="pg_toast">
+      <ObjectId>99</ObjectId>
+    </schema>
+    <schema id="15" parent="2" name="pg_temp_1">
+      <ObjectId>11736</ObjectId>
+    </schema>
+    <schema id="16" parent="2" name="pg_toast_temp_1">
+      <ObjectId>11737</ObjectId>
+    </schema>
+    <schema id="17" parent="2" name="information_schema">
+      <ObjectId>12267</ObjectId>
+    </schema>
+    <table id="18" parent="12" name="__EFMigrationsHistory">
+      <ObjectId>16387</ObjectId>
+      <StateNumber>560</StateNumber>
+    </table>
+    <table id="19" parent="12" name="copyrights">
+      <ObjectId>16392</ObjectId>
+      <StateNumber>561</StateNumber>
+    </table>
+    <table id="20" parent="12" name="main_page_slides">
+      <ObjectId>16400</ObjectId>
+      <StateNumber>561</StateNumber>
+    </table>
+    <column id="21" parent="18" name="MigrationId">
+      <Position>1</Position>
+      <DataType>varchar(150)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>560</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="22" parent="18" name="ProductVersion">
+      <Position>2</Position>
+      <DataType>varchar(32)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>560</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="23" parent="18" name="PK___EFMigrationsHistory">
+      <ObjectId>16390</ObjectId>
+      <ColNames>MigrationId</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="24" parent="18" name="PK___EFMigrationsHistory">
+      <ObjectId>16391</ObjectId>
+      <ColNames>MigrationId</ColNames>
+      <UnderlyingIndexName>PK___EFMigrationsHistory</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="25" parent="19" name="id">
+      <Position>1</Position>
+      <DataType>uuid|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>561</StateNumber>
+      <TypeId>2950</TypeId>
+    </column>
+    <column id="26" parent="19" name="logo">
+      <Position>2</Position>
+      <DataType>text|0s</DataType>
+      <StateNumber>561</StateNumber>
+      <TypeId>25</TypeId>
+    </column>
+    <column id="27" parent="19" name="name">
+      <Position>3</Position>
+      <DataType>text|0s</DataType>
+      <StateNumber>561</StateNumber>
+      <TypeId>25</TypeId>
+    </column>
+    <index id="28" parent="19" name="PK_copyrights">
+      <ObjectId>16398</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="29" parent="19" name="PK_copyrights">
+      <ObjectId>16399</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>PK_copyrights</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="30" parent="20" name="id">
+      <Position>1</Position>
+      <DataType>uuid|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>561</StateNumber>
+      <TypeId>2950</TypeId>
+    </column>
+    <column id="31" parent="20" name="copyright_id">
+      <Position>2</Position>
+      <DataType>uuid|0s</DataType>
+      <StateNumber>561</StateNumber>
+      <TypeId>2950</TypeId>
+    </column>
+    <column id="32" parent="20" name="image">
+      <Position>3</Position>
+      <DataType>text|0s</DataType>
+      <StateNumber>561</StateNumber>
+      <TypeId>25</TypeId>
+    </column>
+    <column id="33" parent="20" name="text">
+      <Position>4</Position>
+      <DataType>text|0s</DataType>
+      <StateNumber>561</StateNumber>
+      <TypeId>25</TypeId>
+    </column>
+    <index id="34" parent="20" name="PK_main_page_slides">
+      <ObjectId>16406</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="35" parent="20" name="IX_main_page_slides_copyright_id">
+      <ObjectId>16413</ObjectId>
+      <ColNames>copyright_id</ColNames>
+    </index>
+    <key id="36" parent="20" name="PK_main_page_slides">
+      <ObjectId>16407</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>PK_main_page_slides</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="37" parent="20" name="FK_main_page_slides_copyrights_copyright_id">
+      <ObjectId>16408</ObjectId>
+      <ColNames>copyright_id</ColNames>
+      <RefTableId>16392</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>copyrights</RefTableName>
+      <RefKeyName>PK_copyrights</RefKeyName>
+      <RefColNames>id</RefColNames>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+  </database-model>
+</dataSource>

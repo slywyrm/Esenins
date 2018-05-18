@@ -1,9 +1,10 @@
 import { ChangeDetectorRef, Component, HostBinding, OnDestroy, OnInit } from '@angular/core';
 import { SlidesService } from '../../../shared/services/slides/slides.service';
-import { SlideModel } from '../../../shared/models/slide.model';
+import { Slide } from '../../../shared/models/slide';
 import { MainService } from '../../main.service';
 import { interval, Observable, Subscription } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'es-main-page',
@@ -12,20 +13,19 @@ import { filter, map } from 'rxjs/operators';
 })
 export class MainPageComponent implements OnInit, OnDestroy {
   // @HostBinding('style.opacity') private opacity = 1;
-  private slidesSubscription: Subscription;
   private autoslideSubscription: Subscription;
   private selectedSectionSubscription: Subscription;
   private autoslideEnabled = true;
   private slideIsChanging = false;
-  slides: SlideModel[] = [];
+  slides: Slide[] = [];
   currentSlideIndex = 0;
 
-  constructor(public slidesService: SlidesService,
+  constructor(private route: ActivatedRoute,
               private mainService: MainService,
               private cdr: ChangeDetectorRef) { }
 
   ngOnInit() {
-    this.slidesSubscription = this.slidesService.slides$.subscribe(slides => this.slides = slides);
+    this.route.data.subscribe(data => this.slides = data.slides);
     this.autoslideSubscription = interval(5000).pipe(
       filter(() => this.autoslideEnabled)
     ).subscribe(() => this.slideTo(this.currentSlideIndex + 1));
@@ -34,7 +34,6 @@ export class MainPageComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    this.slidesSubscription.unsubscribe();
     this.autoslideSubscription.unsubscribe();
     this.selectedSectionSubscription.unsubscribe();
   }

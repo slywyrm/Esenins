@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, HostBinding, Input, OnInit } from '@angular/core';
-import { SlideModel } from '../../../../shared/models/slide.model';
+import { Slide } from '../../../../shared/models/slide';
 
 @Component({
   selector: 'es-main-page-slide',
@@ -11,7 +11,7 @@ export class MainPageSlideComponent implements OnInit {
   @HostBinding('style.z-index') private zIndex = 900;
   opacity = '0';
 
-  @Input() slide: SlideModel;
+  @Input() slide: Slide;
 
   @Input() set active(value: boolean) {
     this.zIndex = value ? 901 : 900;

@@ -6,22 +6,27 @@
       <e p="Bin" t="ExcludeRecursive" />
       <e p="Controllers" t="Include">
         <e p="ContactsController.cs" t="Include" />
+        <e p="MainPageController.cs" t="Include" />
       </e>
       <e p="Data" t="Include">
-        <e p="ITestRepository.cs" t="Include" />
-        <e p="TestContext.cs" t="Include" />
-        <e p="TestRepository.cs" t="Include" />
+        <e p="AppDbContext.cs" t="Include" />
+        <e p="DbInitializer.cs" t="Include" />
       </e>
       <e p="Esenins.API.csproj" t="IncludeRecursive" />
       <e p="Esenins.API.sln" t="IncludeFlat" />
+      <e p="Migrations" t="Include">
+        <e p="20180518090950_InitialCreate.cs" t="Include" />
+        <e p="20180518090950_InitialCreate.Designer.cs" t="Include" />
+        <e p="AppDbContextModelSnapshot.cs" t="Include" />
+      </e>
       <e p="Models" t="Include">
         <e p="Contacts.cs" t="Include" />
-        <e p="DBSettings.cs" t="Include" />
-        <e p="Test.cs" t="Include" />
+        <e p="Copyright.cs" t="Include" />
+        <e p="MainPageSlide.cs" t="Include" />
       </e>
       <e p="obj" t="ExcludeRecursive">
         <e p="Debug" t="Include">
-          <e p="netcoreapp2.0" t="Include">
+          <e p="netcoreapp2.0.7" t="Include">
             <e p="Esenins.API.AssemblyInfo.cs" t="Include" />
           </e>
         </e>
