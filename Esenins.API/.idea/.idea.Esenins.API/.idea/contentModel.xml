@@ -22,7 +22,9 @@
       <e p="Models" t="Include">
         <e p="Contacts.cs" t="Include" />
         <e p="Copyright.cs" t="Include" />
+        <e p="Image.cs" t="Include" />
         <e p="MainPageSlide.cs" t="Include" />
+        <e p="PortfolioItem.cs" t="Include" />
       </e>
       <e p="obj" t="ExcludeRecursive">
         <e p="Debug" t="Include">

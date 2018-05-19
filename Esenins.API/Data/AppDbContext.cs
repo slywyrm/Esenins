@@ -13,6 +13,8 @@ namespace Esenins.API.Data
         
         public DbSet<MainPageSlide> MainPageSlides { get; set; }
         public DbSet<Copyright> Copyrights { get; set; }
+        public DbSet<Image> Images { get; set; }
+        public DbSet<PortfolioItem> PortfolioItems { get; set; }
         
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
