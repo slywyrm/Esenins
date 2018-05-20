@@ -8,6 +8,7 @@
       <e p="Controllers" t="Include">
         <e p="ContactsController.cs" t="Include" />
         <e p="MainPageController.cs" t="Include" />
+        <e p="ProjectsController.cs" t="Include" />
       </e>
       <e p="Data" t="Include">
         <e p="AppDbContext.cs" t="Include" />
@@ -19,6 +20,14 @@
       <e p="Migrations" t="Include">
         <e p="20180518090950_InitialCreate.Designer.cs" t="Include" />
         <e p="20180518090950_InitialCreate.cs" t="Include" />
+        <e p="20180520144125_PortfolioItems.Designer.cs" t="Include" />
+        <e p="20180520144125_PortfolioItems.cs" t="Include" />
+        <e p="20180520154932_PortfolioItem.Order.Designer.cs" t="Include" />
+        <e p="20180520154932_PortfolioItem.Order.cs" t="Include" />
+        <e p="20180520172751_Projects.Designer.cs" t="Include" />
+        <e p="20180520172751_Projects.cs" t="Include" />
+        <e p="20180520180526_Project.PortfolioId.Designer.cs" t="Include" />
+        <e p="20180520180526_Project.PortfolioId.cs" t="Include" />
         <e p="AppDbContextModelSnapshot.cs" t="Include" />
       </e>
       <e p="Models" t="Include">
@@ -27,13 +36,15 @@
         <e p="Image.cs" t="Include" />
         <e p="MainPageSlide.cs" t="Include" />
         <e p="PortfolioItem.cs" t="Include" />
+        <e p="Project.cs" t="Include" />
+        <e p="ProjectsSection.cs" t="Include" />
       </e>
       <e p="Program.cs" t="Include" />
       <e p="Startup.cs" t="Include" />
       <e p="bin" t="ExcludeRecursive" />
       <e p="obj" t="ExcludeRecursive">
         <e p="Debug" t="Include">
-          <e p="netcoreapp2.0.7" t="Include">
+          <e p="netcoreapp2.0" t="Include">
             <e p="Esenins.API.AssemblyInfo.cs" t="Include" />
           </e>
         </e>

@@ -1,5 +1,5 @@
 import { ImageSrc } from './image-src.type';
-import { CopyrightModel } from './copyright.model';
+import { Copyright } from './copyright';
 
 export type TileSize = 'long' | 'tall' | 'big';
 
@@ -11,6 +11,6 @@ export interface PortfolioItem {
   description: string;
   placeholderPhoto: ImageSrc;
   tileSize?: TileSize;
-  photos: ImageSrc[];
-  copyright?: CopyrightModel;
+  photos: { id: string, path: string }[];
+  copyright?: Copyright;
 }

@@ -1,5 +1,5 @@
 import { Component, HostBinding, Input, OnInit } from '@angular/core';
-import { CopyrightModel } from '../../models/copyright.model';
+import { Copyright } from '../../models/copyright';
 
 @Component({
   selector: 'es-copyright',
@@ -8,7 +8,7 @@ import { CopyrightModel } from '../../models/copyright.model';
 })
 export class CopyrightComponent implements OnInit {
   @HostBinding('style.fontSize') private fontSize = '1rem';
-  @Input() copyright: CopyrightModel;
+  @Input() copyright: Copyright;
   @Input() set scale(value: number) {
     this.fontSize = `${value}rem`;
   }

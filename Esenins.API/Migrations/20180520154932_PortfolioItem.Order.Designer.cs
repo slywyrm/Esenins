@@ -11,9 +11,10 @@ using System;
 namespace Esenins.API.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20180520154932_PortfolioItem.Order")]
+    partial class PortfolioItemOrder
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -115,47 +116,6 @@ namespace Esenins.API.Migrations
                     b.ToTable("portfolio");
                 });
 
-            modelBuilder.Entity("Esenins.API.Models.Project", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnName("id");
-
-                    b.Property<Guid?>("CopyrightId")
-                        .HasColumnName("copyright_id");
-
-                    b.Property<string>("Name")
-                        .HasColumnName("name");
-
-                    b.Property<string>("PortfolioId")
-                        .HasColumnName("portfolio_id");
-
-                    b.Property<string>("ProjectsSectionId")
-                        .HasColumnName("projects_section_id");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("CopyrightId");
-
-                    b.HasIndex("ProjectsSectionId");
-
-                    b.ToTable("projects");
-                });
-
-            modelBuilder.Entity("Esenins.API.Models.ProjectsSection", b =>
-                {
-                    b.Property<string>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnName("id");
-
-                    b.Property<string>("Name")
-                        .HasColumnName("name");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("projects_by_section");
-                });
-
             modelBuilder.Entity("Esenins.API.Models.Image", b =>
                 {
                     b.HasOne("Esenins.API.Models.PortfolioItem")
@@ -175,17 +135,6 @@ namespace Esenins.API.Migrations
                     b.HasOne("Esenins.API.Models.Copyright", "Copyright")
                         .WithMany()
                         .HasForeignKey("CopyrightId");
-                });
-
-            modelBuilder.Entity("Esenins.API.Models.Project", b =>
-                {
-                    b.HasOne("Esenins.API.Models.Copyright", "Copyright")
-                        .WithMany()
-                        .HasForeignKey("CopyrightId");
-
-                    b.HasOne("Esenins.API.Models.ProjectsSection")
-                        .WithMany("Projects")
-                        .HasForeignKey("ProjectsSectionId");
                 });
 #pragma warning restore 612, 618
         }

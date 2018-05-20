@@ -11,9 +11,10 @@ using System;
 namespace Esenins.API.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20180520172751_Projects")]
+    partial class Projects
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -127,8 +128,8 @@ namespace Esenins.API.Migrations
                     b.Property<string>("Name")
                         .HasColumnName("name");
 
-                    b.Property<string>("PortfolioId")
-                        .HasColumnName("portfolio_id");
+                    b.Property<string>("PorfolioId")
+                        .HasColumnName("porfolio_id");
 
                     b.Property<string>("ProjectsSectionId")
                         .HasColumnName("projects_section_id");

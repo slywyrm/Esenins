@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Esenins.API.Data;
@@ -18,14 +19,17 @@ namespace Esenins.API
     {
         public Startup(IHostingEnvironment env)
         {
-            var builder = new ConfigurationBuilder();
+            var builder = new ConfigurationBuilder()
+                .SetBasePath(Directory.GetCurrentDirectory())
+                .AddJsonFile("AppSettings.json");
 
-            if (env.IsDevelopment())
-            {
-                builder.AddUserSecrets<Startup>();
-            }
+//            if (env.IsDevelopment())
+//            {
+//                builder.AddUserSecrets<Startup>();
+//            }
 
             Configuration = builder.Build();
+            Console.WriteLine(Configuration["Postgres:ConnectionString"]);
         }
         
         public IConfiguration Configuration { get; }
@@ -40,7 +44,7 @@ namespace Esenins.API
                 options => options.SwaggerDoc("v1", new Info {Title = "Esenins API", Version = "v1"}));
 
             services.AddEntityFrameworkNpgsql()
-                .AddDbContext<AppDbContext>(options => options.UseNpgsql(Configuration["ConnectionString"]));
+                .AddDbContext<AppDbContext>(options => options.UseNpgsql(Configuration["Postgres:ConnectionString"]));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

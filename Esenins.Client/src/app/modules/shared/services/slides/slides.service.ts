@@ -11,11 +11,11 @@ export class SlidesService {
   constructor(private http: HttpClient) { }
 
   getSlides(force = false): Observable<Slide[]> {
-    if (!this.slides.getValue().length || force) {
+    // if (!this.slides.getValue().length || force) {
       return this.http.get<Slide[]>('/MainPage/slides')
         .pipe(tap(data => this.slides.next(data)));
-    }
-    return this.slides.asObservable();
+    // }
+    // return this.slides.asObservable();
   }
 
 }

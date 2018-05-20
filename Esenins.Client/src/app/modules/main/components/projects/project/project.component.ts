@@ -11,9 +11,9 @@ export class ProjectComponent implements OnInit {
   @Input() project: Project;
 
   get copyright(): string {
-    if (this.project.copyright && this.project.copyright === 'DKStudio') {
+    if (this.project.copyright && this.project.copyright.name === 'DKstudio') {
       return '*';
-    } else if (this.project.copyright && this.project.copyright === 'Sundukovy Sisters') {
+    } else if (this.project.copyright && this.project.copyright.name === 'Sundukovy Sisters') {
       return '**';
     }
     return '';

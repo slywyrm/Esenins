@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  db:
+    image: postgres:latest
+    restart: unless-stopped
+    volumes:
+      - /var/lib/postgresql/data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: esenins
+      POSTGRES_PASSWORD: test1234
+      PGDATA: /var/lib/postgresql/data
+    ports:
+      - "5432:5432"

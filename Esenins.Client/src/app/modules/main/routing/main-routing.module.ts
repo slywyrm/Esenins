@@ -12,6 +12,8 @@ import { ContactsComponent } from '../components/contacts/contacts.component';
 import { SectionResolver } from './section.resolver';
 import { BlogComponent } from '../components/blog/blog.component';
 import { SlidesResolver } from './slides.resolver';
+import { PortfolioResolver } from './portfolio.resolver';
+import { ProjectsResolver } from './projects.resolver';
 
 const portfolioItemRoute: Route = {
   path: ':projectId',
@@ -41,7 +43,10 @@ const routes: Routes = [
         path: 'portfolio',
         component: PortfolioComponent,
         children: [portfolioItemRoute],
-        resolve: sectionResolver,
+        resolve: {
+         portfolio: PortfolioResolver,
+          ...sectionResolver
+        }
       },
       {
         path: 'blog',
@@ -52,7 +57,10 @@ const routes: Routes = [
         path: 'projects',
         component: ProjectsComponent,
         children: [portfolioItemRoute],
-        resolve: sectionResolver
+        resolve: {
+          projects: ProjectsResolver,
+          ...sectionResolver
+        }
       },
       {
         path: 'contacts',
@@ -67,6 +75,13 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
-  providers: [PortfolioItemResolver, PortfolioItemCanDeactivateGuard, SectionResolver, SlidesResolver]
+  providers: [
+    PortfolioResolver,
+    PortfolioItemResolver,
+    PortfolioItemCanDeactivateGuard,
+    ProjectsResolver,
+    SectionResolver,
+    SlidesResolver
+  ]
 })
 export class MainRoutingModule { }

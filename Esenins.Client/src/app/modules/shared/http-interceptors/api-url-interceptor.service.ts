@@ -8,7 +8,10 @@ export class ApiUrlInterceptor implements HttpInterceptor {
 
   intercept(req: HttpRequest<any>, next: HttpHandler):
     Observable<HttpEvent<any>> {
-    const newReq = req.clone({url: environment.apiUrl + req.url});
-    return next.handle(newReq);
+    if (req.url.startsWith('/')) {
+      const newReq = req.clone({url: environment.apiUrl + req.url});
+      return next.handle(newReq);
+    }
+    return next.handle(req);
   }
 }

@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Esenins.API.Controllers
 {
-    [Route("api/[controller]/slides")]
+    [Route("api/[controller]")]
     public class MainPageController : Controller
     {
         private readonly AppDbContext _context;
@@ -16,7 +16,7 @@ namespace Esenins.API.Controllers
             _context = context;
         }
         
-        [HttpGet("")]
+        [HttpGet("slides")]
         public async Task<IActionResult> GetSlides()
         {
             var result = await _context.MainPageSlides.Include(i => i.Copyright).ToListAsync();

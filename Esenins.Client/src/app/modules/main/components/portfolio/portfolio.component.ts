@@ -13,8 +13,9 @@ import { MainService } from '../../main.service';
 import { PortfolioItem } from '../../../shared/models/portfolio-item.model';
 import { ProjectsService } from '../../../shared/services/projects/projects.service';
 import { Observable } from 'rxjs';
-import { tap } from 'rxjs/operators';
+import { map, tap } from 'rxjs/operators';
 import { tileEnter } from './animation';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'es-portfolio',
@@ -26,7 +27,6 @@ import { tileEnter } from './animation';
 export class PortfolioComponent implements OnInit, AfterViewInit {
   private pack: Packery;
   @ViewChild('shuffle') private shuffleElement: ElementRef;
-  // projects: PortfolioItem[];
   projects$: Observable<PortfolioItem[]>;
 
   logAnim = console.log;
@@ -37,12 +37,11 @@ export class PortfolioComponent implements OnInit, AfterViewInit {
     );
   }
   constructor(private mainService: MainService,
-              private projectsService: ProjectsService) {
+              private route: ActivatedRoute) {
   }
 
   ngOnInit() {
-    // this.projectsService.getPortfolio().subscribe(projects => this.projects = projects);
-    this.projects$ = this.projectsService.getPortfolio();
+    this.projects$ = this.route.data.pipe(map(data => data.portfolio));
   }
 
   ngAfterViewInit() {

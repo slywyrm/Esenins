@@ -1,0 +1,12 @@
+version:  '3'
+
+services: 
+  esenins-client:
+    build: 
+      context: ./Esenins.Client      
+    image: slywyrm/esenins-client
+
+  esenins-api:
+    build:
+      context: ./Esenins.API
+    image: slywyrm/esenins-api

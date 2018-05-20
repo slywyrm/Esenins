@@ -1,6 +1,6 @@
 import { ImageSrc } from './image-src.type';
 
-export interface CopyrightModel {
+export interface Copyright {
   name: string;
   logo?: ImageSrc;
 }

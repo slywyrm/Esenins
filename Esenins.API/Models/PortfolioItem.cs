@@ -14,5 +14,6 @@ namespace Esenins.API.Models
         public string TileSize { get; set; }
         public IList<Image> Photos { get; set; }
         public Copyright Copyright { get; set; }
+        public int Order { get; set; }
     }
 }

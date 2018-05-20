@@ -80,7 +80,7 @@ export class PortfolioItemComponent implements OnInit, OnDestroy, AfterViewInit 
   }
 
   getUrl(index: number): string {
-    return `url(${this.project.photos[index]})`;
+    return `url(${this.project.photos[index].path})`;
   }
 
   changeSelected(index: number): void {

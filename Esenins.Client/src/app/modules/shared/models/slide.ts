@@ -1,8 +1,8 @@
 import { ImageSrc } from './image-src.type';
-import { CopyrightModel } from './copyright.model';
+import { Copyright } from './copyright';
 
 export class Slide {
   text: string;
   image: ImageSrc;
-  copyright?: CopyrightModel;
+  copyright?: Copyright;
 }
