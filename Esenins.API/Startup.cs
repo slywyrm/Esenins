@@ -45,6 +45,8 @@ namespace Esenins.API
 
             services.AddEntityFrameworkNpgsql()
                 .AddDbContext<AppDbContext>(options => options.UseNpgsql(Configuration["Postgres:ConnectionString"]));
+
+            services.AddSingleton<IFacebookConnector, FacebookConnector>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

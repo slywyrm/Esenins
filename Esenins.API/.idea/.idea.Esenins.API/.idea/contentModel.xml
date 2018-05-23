@@ -7,12 +7,15 @@
       <e p="AppSettings.json" t="Include" />
       <e p="Controllers" t="Include">
         <e p="ContactsController.cs" t="Include" />
+        <e p="FacebookController.cs" t="Include" />
         <e p="MainPageController.cs" t="Include" />
         <e p="ProjectsController.cs" t="Include" />
       </e>
       <e p="Data" t="Include">
         <e p="AppDbContext.cs" t="Include" />
         <e p="DbInitializer.cs" t="Include" />
+        <e p="FacebookConnector.cs" t="Include" />
+        <e p="IFacebookConnector.cs" t="Include" />
       </e>
       <e p="Dockerfile" t="Include" />
       <e p="Esenins.API.csproj" t="IncludeRecursive" />

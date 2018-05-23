@@ -2,45 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="89d9a18b-3c8f-41a3-9208-fa3744eda8dd" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/Controllers/ProjectsController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Models/Project.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Models/ProjectsSection.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Esenins.Client/src/app/modules/main/routing/projects.resolver.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../docker-compose-build.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../docker-compose-db.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Controllers/FacebookController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/FacebookConnector.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/IFacebookConnector.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Esenins.API/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Esenins.API/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Esenins.API/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Esenins.API/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Esenins.API/.idea/dataSources/146d9789-2c1d-4aac-a5c3-f2b8cf118df9.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Esenins.API/.idea/dataSources/146d9789-2c1d-4aac-a5c3-f2b8cf118df9.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Esenins.API/.idea/dataSources/146d9789-2c1d-4aac-a5c3-f2b8cf118df9/storage_v2/_src_/database/esenins.t47VqA/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Esenins.API/.idea/dataSources/146d9789-2c1d-4aac-a5c3-f2b8cf118df9/storage_v2/_src_/database/esenins.t47VqA/schema/public.abK9xQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Esenins.API/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Esenins.API/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppSettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/AppSettings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controllers/MainPageController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/MainPageController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/AppDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Data/AppDbContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/DbInitializer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Data/DbInitializer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Esenins.API.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Esenins.API.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Esenins.API.sln.DotSettings.user" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Migrations/AppDbContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Migrations/AppDbContextModelSnapshot.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/PortfolioItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/PortfolioItem.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Startup.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Esenins.Client/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Esenins.Client/angular.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Esenins.Client/conf/nginx/default.conf" beforeDir="false" afterPath="$PROJECT_DIR$/../Esenins.Client/conf/nginx/default.conf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Esenins.Client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Esenins.Client/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Esenins.Client/src/app/modules/main/components/portfolio/portfolio-item/portfolio-item.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Esenins.Client/src/app/modules/main/components/portfolio/portfolio-item/portfolio-item.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Esenins.Client/src/app/modules/main/components/portfolio/portfolio.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Esenins.Client/src/app/modules/main/components/portfolio/portfolio.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Esenins.Client/src/app/modules/main/components/projects/project/project.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Esenins.Client/src/app/modules/main/components/projects/project/project.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Esenins.Client/src/app/modules/main/components/projects/projects.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Esenins.Client/src/app/modules/main/components/projects/projects.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Esenins.Client/src/app/modules/main/components/projects/projects.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Esenins.Client/src/app/modules/main/components/projects/projects.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Esenins.Client/src/app/modules/main/routing/main-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Esenins.Client/src/app/modules/main/routing/main-routing.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Esenins.Client/src/app/modules/shared/components/copyright/copyright.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Esenins.Client/src/app/modules/shared/components/copyright/copyright.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Esenins.Client/src/app/modules/shared/http-interceptors/api-url-interceptor.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Esenins.Client/src/app/modules/shared/http-interceptors/api-url-interceptor.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Esenins.Client/src/app/modules/shared/models/copyright.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Esenins.Client/src/app/modules/shared/models/copyright.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Esenins.Client/src/app/modules/shared/models/portfolio-item.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Esenins.Client/src/app/modules/shared/models/portfolio-item.model.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Esenins.Client/src/app/modules/shared/models/project.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Esenins.Client/src/app/modules/shared/models/project.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Esenins.Client/src/app/modules/shared/models/slide.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Esenins.Client/src/app/modules/shared/models/slide.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Esenins.Client/src/app/modules/shared/services/projects/projects.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Esenins.Client/src/app/modules/shared/services/projects/projects.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Esenins.Client/src/app/modules/shared/services/slides/slides.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Esenins.Client/src/app/modules/shared/services/slides/slides.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../Esenins.Client/src/app/modules/main/routing/portfolio.resolver.ts" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -88,28 +55,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="PortfolioItem.cs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Models/PortfolioItem.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="16" column="36" selection-start-line="16" selection-start-column="36" selection-end-line="16" selection-end-column="36" />
-              <folding>
-                <marker date="1526831350791" expanded="false" signature="6:47" ph="..." />
-                <marker date="1526831350791" expanded="true" signature="77:576" ph="{...}" />
-                <marker date="1526831350791" expanded="true" signature="110:574" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="DbInitializer.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Data/DbInitializer.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1361">
+            <state relative-caret-position="14030">
               <caret line="610" column="34" selection-start-line="610" selection-start-column="34" selection-end-line="610" selection-end-column="34" />
               <folding>
                 <marker date="1526839511478" expanded="true" signature="6:44" ph="..." />
-                <marker date="1526839511478" expanded="true" signature="72:34374" ph="{...}" />
                 <marker date="1526839511478" expanded="true" signature="112:34372" ph="{...}" />
                 <marker date="1526839511478" expanded="true" signature="281:474" ph="{...}" />
                 <marker date="1526839511478" expanded="true" signature="546:1225" ph="{...}" />
@@ -187,15 +139,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="portfolio" pinned="false" current-in-tab="false">
-        <entry file="das://146d9789-2c1d-4aac-a5c3-f2b8cf118df9/database/esenins/schema/public/table/portfolio">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state>
-              <filtering enabled="true" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Project.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Models/Project.cs">
           <provider selected="true" editor-type-id="text-editor">
@@ -212,10 +155,10 @@
       <file leaf-file-name="ProjectsSection.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Models/ProjectsSection.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
+            <state relative-caret-position="115">
               <caret line="6" column="5" selection-start-line="6" selection-start-column="5" selection-end-line="6" selection-end-column="5" />
               <folding>
-                <marker date="1526835179098" expanded="true" signature="6:47" ph="..." />
+                <marker date="1526835179098" expanded="false" signature="6:47" ph="..." />
                 <marker date="1526835179098" expanded="true" signature="77:259" ph="{...}" />
                 <marker date="1526835179098" expanded="true" signature="112:257" ph="{...}" />
               </folding>
@@ -223,19 +166,87 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ProjectsController.cs" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ProjectsController.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Controllers/ProjectsController.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="828">
-              <caret line="36" column="111" selection-start-line="36" selection-start-column="111" selection-end-line="36" selection-end-column="111" />
+            <state relative-caret-position="414">
+              <caret line="23" column="32" selection-start-line="23" selection-start-column="32" selection-end-line="23" selection-end-column="32" />
               <folding>
-                <marker date="1526839650320" expanded="true" signature="6:155" ph="..." />
+                <marker date="1526839650320" expanded="false" signature="6:155" ph="..." />
                 <marker date="1526839650320" expanded="true" signature="190:1258" ph="{...}" />
                 <marker date="1526839650320" expanded="true" signature="273:1256" ph="{...}" />
                 <marker date="1526839650320" expanded="true" signature="375:427" ph="{...}" />
                 <marker date="1526839650320" expanded="true" signature="523:686" ph="{...}" />
                 <marker date="1526839650320" expanded="true" signature="795:951" ph="{...}" />
                 <marker date="1526839650320" expanded="true" signature="1029:1250" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FacebookController.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Controllers/FacebookController.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="437">
+              <caret line="19" column="44" selection-start-line="19" selection-start-column="44" selection-end-line="19" selection-end-column="44" />
+              <folding>
+                <marker date="1527104971087" expanded="true" signature="6:125" ph="..." />
+                <marker date="1527104971087" expanded="true" signature="160:635" ph="{...}" />
+                <marker date="1527104971087" expanded="true" signature="243:633" ph="{...}" />
+                <marker date="1527104971087" expanded="true" signature="368:422" ph="{...}" />
+                <marker date="1527104971087" expanded="true" signature="503:627" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IFacebookConnector.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Data/IFacebookConnector.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="161">
+              <caret line="7" column="10" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
+              <folding>
+                <marker date="1527104626222" expanded="true" signature="6:52" ph="..." />
+                <marker date="1527104626222" expanded="true" signature="80:174" ph="{...}" />
+                <marker date="1527104626222" expanded="true" signature="122:172" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FacebookConnector.cs" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Data/FacebookConnector.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="511">
+              <caret line="35" column="49" selection-start-line="35" selection-start-column="49" selection-end-line="35" selection-end-column="49" />
+              <folding>
+                <marker date="1527105734447" expanded="true" signature="6:174" ph="..." />
+                <marker date="1527105734447" expanded="true" signature="202:1617" ph="{...}" />
+                <marker date="1527105734447" expanded="true" signature="234:323" ph="{...}" />
+                <marker date="1527105734447" expanded="true" signature="384:1615" ph="{...}" />
+                <marker date="1527105734447" expanded="true" signature="510:816" ph="{...}" />
+                <marker date="1527105734447" expanded="true" signature="855:1327" ph="{...}" />
+                <marker date="1527105734447" expanded="true" signature="1378:1608" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Startup.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Startup.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="510">
+              <caret line="48" column="75" selection-start-line="48" selection-start-column="75" selection-end-line="48" selection-end-column="75" />
+              <folding>
+                <marker date="1527104786032" expanded="false" signature="6:433" ph="..." />
+                <marker date="1527104786032" expanded="true" signature="456:2279" ph="{...}" />
+                <marker date="1527104786032" expanded="true" signature="483:2277" ph="{...}" />
+                <marker date="1527104786032" expanded="true" signature="537:968" ph="{...}" />
+                <marker date="1527104786032" expanded="true" signature="714:837" ph="/* if (env.IsDevelopment()) ... */" />
+                <marker date="1527104786032" expanded="true" signature="1048:1263" ph="/* This method gets called by the runtime. Use this method to add services to the container. ... */" />
+                <marker date="1527104786032" expanded="true" signature="1330:1767" ph="{...}" />
+                <marker date="1527104786032" expanded="true" signature="1955:2271" ph="{...}" />
+                <marker date="1527104786032" expanded="true" signature="2002:2079" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -248,7 +259,6 @@
               <caret line="10" column="9" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
               <folding>
                 <marker date="1526835157307" expanded="false" signature="6:81" ph="..." />
-                <marker date="1526835157307" expanded="true" signature="109:1310" ph="{...}" />
                 <marker date="1526835157307" expanded="true" signature="153:1308" ph="{...}" />
                 <marker date="1526835157307" expanded="true" signature="255:275" ph="{...}" />
                 <marker date="1526835157307" expanded="true" signature="722:1302" ph="{...}" />
@@ -272,17 +282,20 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Models/ProjectsSection.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Program.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Models/PortfolioItem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Data/AppDbContext.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Models/Contacts.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Data/DbInitializer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Controllers/ContactsController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Controllers/MainPageController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Startup.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Controllers/ProjectsController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Models/Project.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Models/ProjectsSection.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Data/FacebookConnector.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Data/IFacebookConnector.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Controllers/FacebookController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Controllers/MainPageController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Startup.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -302,7 +315,6 @@
         <option value="/mnt/data/dev/Personal/Esenins/Esenins.API/Esenins.API.csproj" />
         <option value="$PROJECT_DIR$/Dockerfile" />
         <option value="$PROJECT_DIR$/../docker-compose.yml" />
-        <option value="$PROJECT_DIR$/Startup.cs" />
         <option value="$PROJECT_DIR$/AppSettings.json" />
         <option value="$PROJECT_DIR$/../docker-compose-db.yml" />
         <option value="$PROJECT_DIR$/Controllers/MainPageController.cs" />
@@ -313,6 +325,10 @@
         <option value="$PROJECT_DIR$/Models/Project.cs" />
         <option value="$PROJECT_DIR$/Esenins.API.csproj" />
         <option value="$PROJECT_DIR$/Controllers/ProjectsController.cs" />
+        <option value="$PROJECT_DIR$/Data/IFacebookConnector.cs" />
+        <option value="$PROJECT_DIR$/Startup.cs" />
+        <option value="$PROJECT_DIR$/Controllers/FacebookController.cs" />
+        <option value="$PROJECT_DIR$/Data/FacebookConnector.cs" />
       </list>
     </option>
   </component>
@@ -368,6 +384,13 @@
               <item name="Esenins" type="6f407253:SolutionExplorerNodeFileSystem" />
               <item name="Esenins.API (1 project)" type="977d5f41:SolutionExplorerNodeRider" />
               <item name="Esenins.API" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="Data" type="977d5f41:SolutionExplorerNodeRider" />
+            </path>
+            <path>
+              <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
+              <item name="Esenins" type="6f407253:SolutionExplorerNodeFileSystem" />
+              <item name="Esenins.API (1 project)" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="Esenins.API" type="977d5f41:SolutionExplorerNodeRider" />
               <item name="Models" type="977d5f41:SolutionExplorerNodeRider" />
             </path>
           </expand>
@@ -382,7 +405,7 @@
     <property name="Rider.ProjectViewActivator.IsNotFirstRun" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
-    <property name="settings.editor.selected.configurable" value="SolutionBuilderGeneralOptionsPageId" />
+    <property name="settings.editor.selected.configurable" value="project.propDebugger" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -457,11 +480,12 @@
       <workItem from="1526815887216" duration="6789000" />
       <workItem from="1526827725852" duration="764000" />
       <workItem from="1526828506028" duration="9394000" />
+      <workItem from="1527100903509" duration="4741000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37294000" />
+    <option name="totallyTimeSpent" value="42035000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -473,7 +497,8 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1987" y="25" width="2493" height="1415" extended-state="7" />
+    <frame x="1987" y="25" width="2493" height="1415" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="right" id="Errors In Solution" order="3" />
@@ -481,12 +506,11 @@
       <window_info anchor="bottom" id="Unit Tests" order="7" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="REST Client" order="7" weight="0.32991317" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49979568" visible="true" weight="0.18232045" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49979568" weight="0.22415154" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49979568" weight="0.27466455" />
-      <window_info anchor="bottom" id="NuGet" order="7" sideWeight="0.49979568" weight="0.32833466" />
-      <window_info anchor="bottom" id="Database Console" order="8" weight="0.3291239" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1463016" />
+      <window_info active="true" anchor="bottom" id="NuGet" order="7" sideWeight="0.49979568" visible="true" weight="0.32833466" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14752759" />
       <window_info anchor="bottom" id="Docker" order="7" weight="0.32991317" />
       <window_info anchor="bottom" id="Build" order="7" weight="0.3038674" />
       <window_info anchor="right" id="Database" order="3" visible="true" weight="0.13322435" />
@@ -499,6 +523,7 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Database Console" order="8" weight="0.3291239" />
       <window_info anchor="bottom" id="Find" order="1" />
     </layout>
   </component>
@@ -511,19 +536,51 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="4" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Data/FacebookConnector.cs</url>
+          <line>25</line>
+          <properties documentPath="$PROJECT_DIR$/Data/FacebookConnector.cs" initialLine="25">
+            <startOffsets>
+              <startOffset value="770" />
+            </startOffsets>
+            <endOffsets>
+              <endOffset value="806" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Controllers/FacebookController.cs</url>
+          <line>21</line>
+          <properties documentPath="$PROJECT_DIR$/Controllers/FacebookController.cs" initialLine="21">
+            <startOffsets>
+              <startOffset value="526" />
+            </startOffsets>
+            <endOffsets>
+              <endOffset value="565" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Controllers/ProjectsController.cs</url>
+          <line>22</line>
+          <properties documentPath="$PROJECT_DIR$/Controllers/ProjectsController.cs" initialLine="22">
+            <startOffsets>
+              <startOffset value="546" />
+            </startOffsets>
+            <endOffsets>
+              <endOffset value="643" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="7" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Models/Contacts.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="2" column="25" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Models/DBSettings.cs" />
-    <entry file="file://$PROJECT_DIR$/Models/Test.cs" />
     <entry file="file://$PROJECT_DIR$/Data/TestContext.cs" />
     <entry file="file://$PROJECT_DIR$/Data/ITestRepository.cs" />
     <entry file="file://$PROJECT_DIR$/Data/TestRepository.cs" />
@@ -684,23 +741,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Startup.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="17" column="24" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="24" />
-          <folding>
-            <marker date="1526815257543" expanded="false" signature="6:433" ph="..." />
-            <marker date="1526815257543" expanded="true" signature="483:2200" ph="{...}" />
-            <marker date="1526815257543" expanded="true" signature="537:968" ph="{...}" />
-            <marker date="1526815257543" expanded="true" signature="714:837" ph="/* if (env.IsDevelopment()) ... */" />
-            <marker date="1526815257543" expanded="true" signature="1048:1263" ph="/* This method gets called by the runtime. Use this method to add services to the container. ... */" />
-            <marker date="1526815257543" expanded="true" signature="1330:1690" ph="{...}" />
-            <marker date="1526815257543" expanded="true" signature="1878:2194" ph="{...}" />
-            <marker date="1526815257543" expanded="true" signature="1925:2002" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../docker-compose-build.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="161">
@@ -712,13 +752,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="414">
           <caret line="18" column="24" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
-          <folding>
-            <marker date="1526828752405" expanded="true" signature="6:141" ph="..." />
-            <marker date="1526828752405" expanded="true" signature="176:669" ph="{...}" />
-            <marker date="1526828752405" expanded="true" signature="259:667" ph="{...}" />
-            <marker date="1526828752405" expanded="true" signature="370:422" ph="{...}" />
-            <marker date="1526828752405" expanded="true" signature="512:661" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -728,7 +761,6 @@
           <caret line="16" column="36" selection-start-line="16" selection-start-column="36" selection-end-line="16" selection-end-column="36" />
           <folding>
             <marker date="1526831350791" expanded="false" signature="6:47" ph="..." />
-            <marker date="1526831350791" expanded="true" signature="77:576" ph="{...}" />
             <marker date="1526831350791" expanded="true" signature="110:574" ph="{...}" />
           </folding>
         </state>
@@ -747,7 +779,6 @@
           <caret line="10" column="9" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
           <folding>
             <marker date="1526835157307" expanded="false" signature="6:81" ph="..." />
-            <marker date="1526835157307" expanded="true" signature="109:1310" ph="{...}" />
             <marker date="1526835157307" expanded="true" signature="153:1308" ph="{...}" />
             <marker date="1526835157307" expanded="true" signature="255:275" ph="{...}" />
             <marker date="1526835157307" expanded="true" signature="722:1302" ph="{...}" />
@@ -789,11 +820,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Data/DbInitializer.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1361">
+        <state relative-caret-position="14030">
           <caret line="610" column="34" selection-start-line="610" selection-start-column="34" selection-end-line="610" selection-end-column="34" />
           <folding>
             <marker date="1526839511478" expanded="true" signature="6:44" ph="..." />
-            <marker date="1526839511478" expanded="true" signature="72:34374" ph="{...}" />
             <marker date="1526839511478" expanded="true" signature="112:34372" ph="{...}" />
             <marker date="1526839511478" expanded="true" signature="281:474" ph="{...}" />
             <marker date="1526839511478" expanded="true" signature="546:1225" ph="{...}" />
@@ -879,28 +909,88 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Models/ProjectsSection.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
+        <state relative-caret-position="115">
           <caret line="6" column="5" selection-start-line="6" selection-start-column="5" selection-end-line="6" selection-end-column="5" />
           <folding>
-            <marker date="1526835179098" expanded="true" signature="6:47" ph="..." />
+            <marker date="1526835179098" expanded="false" signature="6:47" ph="..." />
             <marker date="1526835179098" expanded="true" signature="77:259" ph="{...}" />
             <marker date="1526835179098" expanded="true" signature="112:257" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Startup.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="48" column="75" selection-start-line="48" selection-start-column="75" selection-end-line="48" selection-end-column="75" />
+          <folding>
+            <marker date="1527104786032" expanded="false" signature="6:433" ph="..." />
+            <marker date="1527104786032" expanded="true" signature="456:2279" ph="{...}" />
+            <marker date="1527104786032" expanded="true" signature="483:2277" ph="{...}" />
+            <marker date="1527104786032" expanded="true" signature="537:968" ph="{...}" />
+            <marker date="1527104786032" expanded="true" signature="714:837" ph="/* if (env.IsDevelopment()) ... */" />
+            <marker date="1527104786032" expanded="true" signature="1048:1263" ph="/* This method gets called by the runtime. Use this method to add services to the container. ... */" />
+            <marker date="1527104786032" expanded="true" signature="1330:1767" ph="{...}" />
+            <marker date="1527104786032" expanded="true" signature="1955:2271" ph="{...}" />
+            <marker date="1527104786032" expanded="true" signature="2002:2079" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Data/IFacebookConnector.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="7" column="10" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
+          <folding>
+            <marker date="1527104626222" expanded="true" signature="6:52" ph="..." />
+            <marker date="1527104626222" expanded="true" signature="80:174" ph="{...}" />
+            <marker date="1527104626222" expanded="true" signature="122:172" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Controllers/ProjectsController.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="828">
-          <caret line="36" column="111" selection-start-line="36" selection-start-column="111" selection-end-line="36" selection-end-column="111" />
+        <state relative-caret-position="414">
+          <caret line="23" column="32" selection-start-line="23" selection-start-column="32" selection-end-line="23" selection-end-column="32" />
           <folding>
-            <marker date="1526839650320" expanded="true" signature="6:155" ph="..." />
+            <marker date="1526839650320" expanded="false" signature="6:155" ph="..." />
             <marker date="1526839650320" expanded="true" signature="190:1258" ph="{...}" />
             <marker date="1526839650320" expanded="true" signature="273:1256" ph="{...}" />
             <marker date="1526839650320" expanded="true" signature="375:427" ph="{...}" />
             <marker date="1526839650320" expanded="true" signature="523:686" ph="{...}" />
             <marker date="1526839650320" expanded="true" signature="795:951" ph="{...}" />
             <marker date="1526839650320" expanded="true" signature="1029:1250" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Controllers/FacebookController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="19" column="44" selection-start-line="19" selection-start-column="44" selection-end-line="19" selection-end-column="44" />
+          <folding>
+            <marker date="1527104971087" expanded="true" signature="6:125" ph="..." />
+            <marker date="1527104971087" expanded="true" signature="160:635" ph="{...}" />
+            <marker date="1527104971087" expanded="true" signature="243:633" ph="{...}" />
+            <marker date="1527104971087" expanded="true" signature="368:422" ph="{...}" />
+            <marker date="1527104971087" expanded="true" signature="503:627" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Data/FacebookConnector.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="511">
+          <caret line="35" column="49" selection-start-line="35" selection-start-column="49" selection-end-line="35" selection-end-column="49" />
+          <folding>
+            <marker date="1527105734447" expanded="true" signature="6:174" ph="..." />
+            <marker date="1527105734447" expanded="true" signature="202:1617" ph="{...}" />
+            <marker date="1527105734447" expanded="true" signature="234:323" ph="{...}" />
+            <marker date="1527105734447" expanded="true" signature="384:1615" ph="{...}" />
+            <marker date="1527105734447" expanded="true" signature="510:816" ph="{...}" />
+            <marker date="1527105734447" expanded="true" signature="855:1327" ph="{...}" />
+            <marker date="1527105734447" expanded="true" signature="1378:1608" ph="{...}" />
           </folding>
         </state>
       </provider>
