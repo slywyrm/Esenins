@@ -1,14 +1,17 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Esenins.API.Data;
+using Esenins.API.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace Esenins.API.Controllers
 {
     [Route("api/[controller]")]
-    public class ProjectsController : Controller
+    [ApiController]
+    public class ProjectsController : ControllerBase
     {
         private AppDbContext _context;
 
@@ -18,25 +21,25 @@ namespace Esenins.API.Controllers
         }
         
         [HttpGet("portfolio")]
-        public async Task<IActionResult> GetPortfolio()
+        public async Task<ActionResult<List<PortfolioItem>>> GetPortfolio()
         {
             var result = await _context.Portfolio.Include(i => i.Photos).OrderBy(i => i.Order).ToListAsync();
-            return Json(result);
+            return result;
         }
 
         [HttpGet("portfolio/{id:guid}")]
-        public async Task<IActionResult> GetPortfolioItem(Guid id)
+        public async Task<ActionResult<PortfolioItem>> GetPortfolioItem(Guid id)
         {
             var result = await _context.Portfolio.Include(i => i.Photos).SingleAsync(i => i.Id == id);
-            return Json(result);
+            return result;
         }
 
         [HttpGet("")]
-        public async Task<IActionResult> GetProjects()
+        public async Task<ActionResult<Dictionary<string, ProjectsSection>>> GetProjects()
         {
             var result = await _context.ProjectsBySection.Include(i => i.Projects).ThenInclude(p => p.Copyright)
                 .ToDictionaryAsync(i => i.Id, i => i);
-            return Json(result);
+            return result;
         }
     }
 }

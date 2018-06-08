@@ -1,13 +1,16 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Esenins.API.Data;
+using Esenins.API.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace Esenins.API.Controllers
 {
     [Route("api/[controller]")]
-    public class MainPageController : Controller
+    [ApiController]
+    public class MainPageController : ControllerBase
     {
         private readonly AppDbContext _context;
 
@@ -17,10 +20,10 @@ namespace Esenins.API.Controllers
         }
         
         [HttpGet("slides")]
-        public async Task<IActionResult> GetSlides()
+        public async Task<ActionResult<List<MainPageSlide>>> GetSlides()
         {
             var result = await _context.MainPageSlides.Include(i => i.Copyright).ToListAsync();
-            return Json(result);
+            return result;
         }
     }
 }

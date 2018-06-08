@@ -1,6 +1,7 @@
 ﻿using System.Linq;
 using Esenins.API.Models;
 using Microsoft.EntityFrameworkCore;
+using Npgsql.NameTranslation;
 
 namespace Esenins.API.Data
 {
@@ -20,7 +21,7 @@ namespace Esenins.API.Data
         
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            var mapper = new Npgsql.NpgsqlSnakeCaseNameTranslator();
+            var mapper = new NpgsqlSnakeCaseNameTranslator();
             var types = modelBuilder.Model.GetEntityTypes().ToList();
 
             // Refer to tables in snake_case internally

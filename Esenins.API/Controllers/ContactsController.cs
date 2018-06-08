@@ -7,7 +7,8 @@ using Microsoft.AspNetCore.Mvc;
 namespace Esenins.API.Controllers
 {
     [Route("api/[controller]")]
-    public class ContactsController : Controller
+    [ApiController]
+    public class ContactsController : ControllerBase
     {
         private readonly SmtpClient _smtpClient = new SmtpClient("smtp.yandex.ru");
         

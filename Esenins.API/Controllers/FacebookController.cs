@@ -7,7 +7,8 @@ using Microsoft.AspNetCore.Mvc;
 namespace Esenins.API.Controllers
 {
     [Route("api/[controller]")]
-    public class FacebookController : Controller
+    [ApiController]
+    public class FacebookController : ControllerBase
     {
         private readonly IFacebookConnector _facebook;
 
