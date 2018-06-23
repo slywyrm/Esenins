@@ -36,12 +36,12 @@ export class MainService {
       textColor: 'black',
       menuImgSrc: '/assets/pages/menu-item1.jpg'
     },
-    blog: {
-      name: 'blog',
-      russianName: 'блог',
-      textColor: 'black',
-      menuImgSrc: '/assets/pages/menu-item1.jpg'
-    },
+    // blog: {
+    //   name: 'blog',
+    //   russianName: 'блог',
+    //   textColor: 'black',
+    //   menuImgSrc: '/assets/pages/menu-item1.jpg'
+    // },
     contacts: {
       name: 'contacts',
       russianName: 'контакты',

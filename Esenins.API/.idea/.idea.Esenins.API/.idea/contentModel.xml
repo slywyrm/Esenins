@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
+    <e p="$USER_HOME$/.Rider2018.1/system/resharper-host/local/Transient/ReSharperHost/v12/SolutionCaches/_Esenins.API.-1989137481.00" t="ExcludeRecursive" />
+    <e p="$PROJECT_DIR$/../.gitignore" t="Include" />
     <e p="$PROJECT_DIR$" t="IncludeRecursive">
       <e p="AppSettings.json" t="Include" />
-      <e p="Bin" t="ExcludeRecursive" />
       <e p="Controllers" t="Include">
         <e p="ContactsController.cs" t="Include" />
       </e>
@@ -19,6 +20,9 @@
         <e p="DBSettings.cs" t="Include" />
         <e p="Test.cs" t="Include" />
       </e>
+      <e p="Program.cs" t="Include" />
+      <e p="Startup.cs" t="Include" />
+      <e p="bin" t="ExcludeRecursive" />
       <e p="obj" t="ExcludeRecursive">
         <e p="Debug" t="Include">
           <e p="netcoreapp2.0" t="Include">
@@ -27,10 +31,7 @@
         </e>
       </e>
       <e p="packages" t="ExcludeRecursive" />
-      <e p="Program.cs" t="Include" />
-      <e p="Startup.cs" t="Include" />
       <e p="wwwroot" t="Include" />
     </e>
-    <e p="$USER_HOME$/Library/Caches/Rider2018.1/resharper-host/local/Transient/ReSharperHost/v12/SolutionCaches/_Esenins.API.-422270682.00" t="ExcludeRecursive" />
   </component>
 </project>

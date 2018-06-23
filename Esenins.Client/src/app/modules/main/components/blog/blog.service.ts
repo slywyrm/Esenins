@@ -18,7 +18,7 @@ export class BlogService {
 
   private getToken() {
     this.http.get<{access_token: string}>(
-      `${this.fbApi}/oauth/access_token?client_id=329829260786620&client_secret=eb427eee8e9d9ce020a488546bacabf1&grant_type=client_credentials`
+      `${this.fbApi}/oauth/access_token?client_id=329829260786620&client_secret=16d155141ac16b32e10a271574e65763&grant_type=client_credentials`
     ).pipe(pluck('access_token'))
       .subscribe((token: string) => {
         this.accessToken.next(token);

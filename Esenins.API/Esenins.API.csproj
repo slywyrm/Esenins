@@ -11,4 +11,9 @@
     <PackageReference Include="MongoDB.Driver" Version="2.6.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="2.4.0" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\.gitignore">
+      <Link>.gitignore</Link>
+    </Content>
+  </ItemGroup>
 </Project>

@@ -299,7 +299,8 @@ export class ProjectsService {
         { name: 'Салон «The Beauty Bar» г. Химки', portfolioId: '7' },
         { name: 'Концепт-проект салона-магазина мебельной фабрики Openorion г. Москва' },
         { name: 'Выстовочный стенд мебельной фабрики Openorion г. Москва' },
-        { name: 'Foodtruck "pitApitA" г. Москва', portfolioId: '10' }
+        { name: 'Foodtruck "pitApitA" г. Москва', portfolioId: '10' },
+        { name: 'Офис 540 кв.м. г. Москва, ул. Малая Дмитровка' }
       ]
     },
     {
