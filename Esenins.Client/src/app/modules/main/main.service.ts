@@ -1,7 +1,6 @@
-import { Inject, Injectable } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Sections } from '../shared/models/sections.model';
 import { Section } from '../shared/models/section.model';
-import * as _ from 'lodash';
 import { map, filter } from 'rxjs/operators';
 import { NavigationStart, Router } from '@angular/router';
 import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
@@ -21,8 +20,7 @@ export class MainService {
       name: 'design studio',
       russianName: 'главная',
       textColor: 'white',
-      menuImgSrc: '/assets/pages/menu-item1.jpg',
-      needsHeight: true
+      menuImgSrc: '/assets/pages/menu-item1.jpg'
     },
     portfolio: {
       name: 'portfolio',
@@ -36,18 +34,17 @@ export class MainService {
       textColor: 'black',
       menuImgSrc: '/assets/pages/menu-item1.jpg'
     },
-    blog: {
-      name: 'blog',
-      russianName: 'блог',
-      textColor: 'black',
-      menuImgSrc: '/assets/pages/menu-item1.jpg'
-    },
+    // blog: {
+    //   name: 'blog',
+    //   russianName: 'блог',
+    //   textColor: 'black',
+    //   menuImgSrc: '/assets/pages/menu-item1.jpg'
+    // },
     contacts: {
       name: 'contacts',
       russianName: 'контакты',
       textColor: 'black',
-      menuImgSrc: '/assets/pages/menu-item1.jpg',
-      needsHeight: true
+      menuImgSrc: '/assets/pages/menu-item1.jpg'
     }
   };
 
@@ -106,16 +103,6 @@ export class MainService {
       return keys[oldIndex + delta];
     }
     return keys[oldIndex];
-  }
-
-  currentSectionId(): string {
-    return _.findKey(this.sections, this.selectedSection.getValue());
-  }
-
-  getScrollDir(next: string) {
-    const prevIndex = Object.keys(this.sections).indexOf(this.selectedSection.getValue().name);
-    const nextIndex = Object.keys(this.sections).indexOf(next);
-    return prevIndex > nextIndex ? 'up' : 'down';
   }
 
 }

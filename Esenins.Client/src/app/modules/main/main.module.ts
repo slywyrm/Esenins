@@ -21,6 +21,7 @@ import { ProjectsComponent } from './components/projects/projects.component';
 import { ProjectComponent } from './components/projects/project/project.component';
 import { BlogPostComponent } from './components/blog/blog-post/blog-post.component';
 import { BlogMessageDirective } from './components/blog/blog-post/blog-message.directive';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   imports: [
@@ -47,7 +48,8 @@ import { BlogMessageDirective } from './components/blog/blog-post/blog-message.d
     ProjectsComponent,
     ProjectComponent,
     BlogPostComponent,
-    BlogMessageDirective
+    BlogMessageDirective,
+    LoginComponent
   ],
   providers: [
     MainService

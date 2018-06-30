@@ -33,10 +33,6 @@ export class MainComponent implements OnInit, OnDestroy {
     );
   }
 
-  // get menuShown$(): Observable<boolean> {
-  //   return this.mainService.menuShown$;
-  // }
-
   get isRotated$(): Observable<boolean> {
     return this.mainService.menuShown$;
   }
@@ -46,12 +42,6 @@ export class MainComponent implements OnInit, OnDestroy {
       map(section => section.name === 'portfolio' ||
         section.name === 'projects' ||
         section.name === 'blog')
-    );
-  }
-
-  get needsHeight$(): Observable<boolean> {
-    return this.mainService.selectedSection$.pipe(
-      map(section => !!section.needsHeight)
     );
   }
 

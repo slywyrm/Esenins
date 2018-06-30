@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import * as _ from 'lodash';
+import { range } from 'lodash';
 
 @Component({
   selector: 'es-main-page-slider-controls',
@@ -12,7 +12,7 @@ export class MainPageSliderControlsComponent implements OnInit {
 
   @Output() indicatorClicked = new EventEmitter<number>();
 
-  range = _.range;
+  range = range;
 
   constructor() { }
 

@@ -2,6 +2,7 @@
 using System.Net.Mail;
 using System.Threading.Tasks;
 using Esenins.API.Models;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Esenins.API.Controllers
@@ -11,13 +12,15 @@ namespace Esenins.API.Controllers
     public class ContactsController : ControllerBase
     {
         private readonly SmtpClient _smtpClient = new SmtpClient("smtp.yandex.ru");
+        private readonly bool _isDevelopment;
         
-        public ContactsController()
+        public ContactsController(IHostingEnvironment env)
         {
             _smtpClient.UseDefaultCredentials = false;
             _smtpClient.Credentials = new NetworkCredential("slywyrm", "baDfe_7700747");
             _smtpClient.EnableSsl = true;
             _smtpClient.Port = 587;
+            _isDevelopment = env.IsDevelopment();
         }
 
         [HttpPost("")]
@@ -33,10 +36,15 @@ namespace Esenins.API.Controllers
                 From = new MailAddress("slywyrm@yandex.ru"),
                 Body = body,
                 Subject = "esenins.com - новое сообщение"
-            };            
-            message.To.Add("slywyrm@gmail.com");
-//            message.To.Add("esenin_mm@me.com");
-//            message.To.Add("esenina.kv@gmail.com");
+            };
+            
+            if (_isDevelopment)
+                message.To.Add("slywyrm@gmail.com");
+            else
+            {
+                message.To.Add("esenin_mm@me.com");
+                message.To.Add("esenina.kv@gmail.com");
+            }
 
             await _smtpClient.SendMailAsync(message);
             return Ok();

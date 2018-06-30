@@ -22,10 +22,6 @@
     min-height: 100vh;
     transition: padding-left $transition-time ease-in-out;
 
-    &.needs-height {
-      height: 100vh;
-    }
-
     &.menu-shown {
       padding-left: 40rem;
     }

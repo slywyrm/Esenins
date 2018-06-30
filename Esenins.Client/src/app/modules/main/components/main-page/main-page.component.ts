@@ -1,8 +1,7 @@
-import { ChangeDetectorRef, Component, HostBinding, OnDestroy, OnInit } from '@angular/core';
-import { SlidesService } from '../../../shared/services/slides/slides.service';
+import { ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
 import { Slide } from '../../../shared/models/slide';
 import { MainService } from '../../main.service';
-import { interval, Observable, Subscription } from 'rxjs';
+import { interval, Subscription } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
 import { ActivatedRoute } from '@angular/router';
 
@@ -12,7 +11,6 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./main-page.component.scss']
 })
 export class MainPageComponent implements OnInit, OnDestroy {
-  // @HostBinding('style.opacity') private opacity = 1;
   private autoslideSubscription: Subscription;
   private selectedSectionSubscription: Subscription;
   private autoslideEnabled = true;

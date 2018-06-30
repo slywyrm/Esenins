@@ -39,6 +39,7 @@ $tile-padding: .5rem;
     padding: 1.5rem 3rem;
     opacity: 0;
     transition: opacity $transition-time;
+    user-select: none;
 
     &__name {
       font-size: 1.2rem;

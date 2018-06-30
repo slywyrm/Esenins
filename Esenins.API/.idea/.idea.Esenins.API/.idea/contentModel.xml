@@ -43,6 +43,9 @@
         <e p="ProjectsSection.cs" t="Include" />
       </e>
       <e p="Program.cs" t="Include" />
+      <e p="Properties" t="Include">
+        <e p="launchSettings.json" t="Include" />
+      </e>
       <e p="Startup.cs" t="Include" />
       <e p="bin" t="ExcludeRecursive" />
       <e p="obj" t="ExcludeRecursive">
